@@ -1,0 +1,140 @@
+.warehouse-header {
+  height: 100px;
+  background: #047067;
+}
+
+/*Dashboard*/
+
+.warehouse-main-2 {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 2%;
+}
+
+.warehouse-2-col {
+  width: 48%;
+  height: 800px;
+}
+
+.warehouse-col-space {
+  width: 3%;
+}
+
+.wh-location-graph {
+  height: 30px;
+}
+
+.wh-graph-card {
+  height: 350px;
+  width: 46%;
+  background: #d1dfda;
+  border-radius: 5px;
+  margin: 2%;
+}
+
+.wh-dash-stats1 {
+  height: 350px;
+  width: 100%;
+  background: #d1dfda;
+  border-radius: 5px;
+  margin: 2%;
+}
+
+.wh-dash-stats2 {
+  height: 350px;
+  width: 100%;
+  background: #047067;
+  border-radius: 5px;
+  margin: 2%;
+}
+
+/*Database*/
+
+.warehouse-data {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.wh-data-filter {
+  background: #047067;
+  border-radius: 5px;
+}
+
+.wh-filter-widget {
+  height: 100px;
+  border-radius: 4px;
+}
+
+.wh-datatable {
+  height: 500px;
+  background: #d1dfda;
+}
+
+.wh-data-new {
+  height: 50px;
+  width: 15%;
+  background: #ff7d1c;
+  border-radius: 50px;
+}
+
+/*Database*/
+
+.wh-item-edit {
+  width: 48%;
+  height: 800px;
+  border-radius: 5px;
+  background: #ff7d1c;
+}
+
+.wh-Data-fields {
+  width: 48%;
+  height: 800px;
+  border-radius: 5px;
+  background: #047067;
+}
+
+/*Login*/
+
+.warehouse-login {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.wh-login-card {
+  height: 300px;
+  margin-top: 100px;
+  border-radius: 5px;
+  background: #047067;
+}
+
+/*Media*/
+
+@media only screen and (max-width: 600px) {
+  /*Dashboard*/
+  .warehouse-2-col {
+    height: 500px;
+  }
+  .wh-graph-card {
+    height: 200px;
+  }
+  .wh-dash-stats1 {
+    height: 200px;
+  }
+  .wh-dash-stats2 {
+    height: 200px;
+  }
+
+  /*Item*/
+  .wh-item-edit {
+    height: 300px;
+  }
+
+  .wh-Data-fields {
+    height: 300px;
+    margin-top: 20px;
+  }
+
+  .warehouse-col-space {
+    display: none;
+  }
+}
