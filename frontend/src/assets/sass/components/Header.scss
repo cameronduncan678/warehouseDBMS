@@ -18,7 +18,11 @@
   padding-left: 10px;
 }
 
-.wh-header-nav {
+.wh-header-nav.active {
+  display: block;
+}
+
+.wh-header-nav.inactive {
   display: block;
 }
 
@@ -113,7 +117,11 @@
     display: block;
   }
 
-  .wh-header-nav {
+  .wh-header-nav.active {
+    display: block;
+  }
+
+  .wh-header-nav.inactive {
     display: none;
   }
 
@@ -124,8 +132,14 @@
     height: 50px;
     padding: 0;
     padding-right: 20px;
+    padding-top: 10px;
     color: $mainGreen;
     background: $mainOrange;
+  }
+
+  .wh-header-item:hover {
+    background: $mainGreen;
+    color: $mainOrange;
   }
 
   .wh-header-logout {

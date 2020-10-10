@@ -5,11 +5,13 @@ import jQuery from 'jquery';
 class Header extends React.Component {
 
     navRollout = () => {
-        if (!jQuery('.wh-header-nav').is(':visible')) {
-            jQuery('.wh-header-nav').show();
+        if (!jQuery('#headerNavItems').is(':visible')) {
+            jQuery('#headerNavItems').removeClass('inactive');
+            jQuery('#headerNavItems').addClass('active');
         }
-        else if (jQuery('.wh-header-nav').is(':visible')) {
-            jQuery('.wh-header-nav').hide();
+        else if (jQuery('#headerNavItems').is(':visible')) {
+            jQuery('#headerNavItems').removeClass('active');
+            jQuery('#headerNavItems').addClass('inactive');
         }
     }
 
@@ -24,7 +26,7 @@ class Header extends React.Component {
                     <div className="wh-header-nav-icon">
                         <i className="fas fa-bars" onClick={this.navRollout}></i>
                     </div>
-                    <div className="wh-header-nav">
+                    <div id="headerNavItems" className="wh-header-nav inactive">
                         <div className="wh-header-item">Dashboard</div>
                         <div className="wh-header-item">Database</div>
                         <div className="wh-header-item">Items</div>
