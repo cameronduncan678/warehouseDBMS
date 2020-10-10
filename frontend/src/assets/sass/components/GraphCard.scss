@@ -1,0 +1,13 @@
+@import '../import/colors.scss';
+
+.wh-graphCard {
+  height: 300px;
+  background: $accentGreen;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .wh-graphCard {
+    height: 150px;
+  }
+}

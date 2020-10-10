@@ -1,0 +1,54 @@
+@import '../import/colors.scss';
+
+$filterHeight: 80px;
+
+.wh-filter-bar {
+  background: $mainGreen;
+  border-radius: 5px;
+}
+
+.wh-filter-widget-title {
+  height: $filterHeight;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: $mainGreen;
+  background: $mainOrange;
+}
+
+.wh-filter-widget-title p {
+  padding-top: 5px;
+}
+
+.wh-filter-btn {
+  width: 90%;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 50px;
+  background: $mainGreen;
+  color: $mainOrange;
+  font-weight: bold;
+}
+
+.wh-filter-btn:hover {
+  background: $mainOrange;
+  color: $mainGreen;
+  border: solid 3px $mainGreen;
+}
+
+.wh-filter-widget-input {
+  height: $filterHeight;
+}
+
+.wh-filter-input-textbox {
+  background: $accentGreen;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.wh-filter-input-textbox input {
+  color: $mainGreen;
+  background: $mainGreen;
+}

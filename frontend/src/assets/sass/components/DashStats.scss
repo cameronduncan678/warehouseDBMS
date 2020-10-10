@@ -1,0 +1,25 @@
+@import '../import/colors.scss';
+
+.wh-stats1 {
+  height: 300px;
+  width: 100%;
+  background: $mainOrange;
+  border-radius: 5px;
+}
+
+.wh-stats2 {
+  height: 300px;
+  width: 100%;
+  background: $mainGreen;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .wh-stats1 {
+    height: 200px;
+  }
+
+  .wh-stats2 {
+    height: 200px;
+  }
+}
