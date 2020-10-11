@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import {Link} from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -27,9 +28,15 @@ class Header extends React.Component {
                         <i className="fas fa-bars" onClick={this.navRollout}></i>
                     </div>
                     <div id="headerNavItems" className="wh-header-nav inactive">
-                        <div className="wh-header-item">Dashboard</div>
-                        <div className="wh-header-item">Database</div>
-                        <div className="wh-header-item">Items</div>
+                        <Link to="/">
+                            <div className="wh-header-item">Dashboard</div>
+                        </Link>
+                        <Link to="/database">
+                            <div className="wh-header-item">Database</div>
+                        </Link>
+                        <Link to="/items">
+                            <div className="wh-header-item">Items</div>
+                        </Link>
                         <div className="wh-header-user">John Smith</div>
                         <div className="wh-header-logout">
                             <button className="btn">Log Out</button>
