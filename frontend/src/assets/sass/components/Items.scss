@@ -1,0 +1,28 @@
+@import '../import/colors.scss';
+
+.wh-Items {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wh-dataItems {
+  width: 90%;
+  margin: 0 auto;
+  height: 700px;
+  border-radius: 5px;
+  background: $mainOrange;
+}
+
+.wh-datapacket {
+  width: 90%;
+  margin: 0 auto;
+  height: 700px;
+  border-radius: 5px;
+  background: $mainGreen;
+}
+
+@media screen and (max-width: 992px) {
+  .wh-datapacket {
+    margin-top: 30px;
+  }
+}

@@ -5,6 +5,7 @@ import './assets/css/App.css';
 import Header from './components/Header';
 import Dashboard from './components/Dasboard';
 import Database from './components/Database';
+import Items from './components/Items';
 
 class App extends Component {
   render(){
@@ -12,7 +13,8 @@ class App extends Component {
       <div className="App">
         <Header />
         {/* <Dashboard /> */}
-        <Database />
+        {/* <Database /> */}
+        <Items />
       </div>
     );
   }

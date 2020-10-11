@@ -22,6 +22,10 @@
 .wh-header-nav.inactive{display:none}.wh-header-item{float:right;width:100%;text-align:right;height:50px;padding:0;padding-right:20px;padding-top:10px;color:#047067;background:#ff7d1c}
 .wh-header-item:hover{background:#047067;color:#ff7d1c}.wh-header-logout{width:80%;background:#ff7d1c;color:#047067}
 .wh-header-logout button{background:#047067;color:#ff7d1c;width:50%;float:right}.wh-header-logout button:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
-.wh-header-user{background:#ff7d1c;color:#047067}}.wh-newData{width:20%}.wh-newData-btn{width:100%;height:50px;border-radius:50px;font-size:20px;font-weight:bold;background:#ff7d1c;color:#047067}
+.wh-header-user{background:#ff7d1c;color:#047067}}.wh-Items{width:80%;margin:0 auto}
+.wh-dataItems{width:90%;margin:0 auto;height:700px;border-radius:5px;background:#ff7d1c}
+.wh-datapacket{width:90%;margin:0 auto;height:700px;border-radius:5px;background:#047067}
+@media screen and (max-width:992px){.wh-datapacket{margin-top:30px}}.wh-newData{width:20%}
+.wh-newData-btn{width:100%;height:50px;border-radius:50px;font-size:20px;font-weight:bold;background:#ff7d1c;color:#047067}
 .wh-newData-btn:hover{background:#047067;color:#ff7d1c;border:solid 3px #ff7d1c}.wh-table{height:450px;background:#ff7d1c;border-radius:5px}
 /*# sourceMappingURL=App.css.map */
