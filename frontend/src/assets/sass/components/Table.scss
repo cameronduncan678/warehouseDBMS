@@ -1,7 +1,104 @@
 @import '../import/colors.scss';
 
-.wh-table {
+.wh-table-section {
   height: 450px;
   background: $mainOrange;
   border-radius: 5px;
+  overflow: scroll;
+}
+
+.wh-table {
+  color: $mainGreen;
+}
+
+.wh-table-thead {
+}
+
+.wh-table-header-1 {
+  width: 250px;
+  background: $mainOrange;
+}
+
+.wh-table-header-2 {
+  width: 350px;
+  background: $mainOrange;
+}
+
+.wh-table-header-3 {
+  width: 270px;
+  background: $mainOrange;
+}
+
+.wh-table-header-4 {
+  width: 300px;
+  background: $mainOrange;
+}
+
+.wh-table-header-5 {
+  width: 200px;
+  background: $mainOrange;
+}
+
+.wh-table-header-6 {
+  width: 250px;
+  background: $mainOrange;
+}
+
+.wh-table-header-7 {
+  width: 150px;
+  background: $mainOrange;
+}
+
+.wh-table-data {
+  background: white;
+}
+
+.wh-table-data:nth-child(even) {
+  background: $accentGreen;
+}
+
+.wh-table-status-ok {
+  background: green;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  width: 70%;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.wh-table-status-warning {
+  background: orange;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  width: 70%;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.wh-table-status-over {
+  background: red;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  width: 70%;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.wh-table-link-btn {
+  background: $mainGreen;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  width: 40%;
+  border-radius: 10px;
+  font-size: 25px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.wh-table tbody td {
+  border: solid 1px $accentDarkGreen;
 }

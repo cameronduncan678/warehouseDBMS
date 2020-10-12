@@ -36,10 +36,11 @@
   font-weight: bolder;
   cursor: pointer;
   transition: 0.1s;
+  color: $mainOrange !important;
 }
 
 .wh-header-item:hover {
-  color: $mainGreen;
+  color: $mainGreen !important;
   background: $mainOrange;
 }
 
