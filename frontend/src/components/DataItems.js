@@ -1,9 +1,38 @@
 import React from 'react';
 
-class DataItems extends React.Component{
-    render(){
-        return(
-            <div className="wh-dataItems"></div>
+class DataItems extends React.Component {
+    render() {
+        return (
+            <div className="wh-dataItems">
+                <div className="wh-dataItems-header">
+                    <span>Items</span>
+                </div>
+                <div className="section wh-dataItems-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className="wh-dataitem-header-1">Name Here</th>
+                                <th className="wh-dataitem-header-2">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody className="wh-dataitem-body">
+                            <tr>
+                                <td>Storage Item</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Item for Rent</td>
+                                <td>8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="section ">
+                    <div className="wh-dataitems-addnew">
+                        <div className="btn wh-dataitems-btn">New Item</div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

@@ -13,12 +13,82 @@
   background: $mainOrange;
 }
 
+.wh-dataItems-table{
+  width: 90%;
+  margin: 0 auto;
+  color: $mainGreen;
+  height: 550px;
+  overflow: scroll;
+  background: grey;
+  padding-top: 0;
+}
+
+.wh-dataItems-header{
+  background: $mainGreen;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.wh-dataItems-header span{
+  font-size: 30px;
+  padding-left: 20px;
+  color: $mainOrange;
+  font-weight: bold;
+}
+
+
+.wh-dataitem-header-1{
+  width: 80%;
+  color: $mainGreen;
+  background: $mainOrange;
+}
+
+.wh-dataitem-header-2{
+  width: 20%;
+  color: $mainGreen;
+  background: $mainOrange;
+}
+
 .wh-datapacket {
   width: 90%;
   margin: 0 auto;
   height: 700px;
   border-radius: 5px;
   background: $mainGreen;
+}
+
+.wh-dataitems-addnew{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wh-dataitem-body tr{
+  background: white;
+}
+
+.wh-dataitem-body td{
+  border: solid 1px $accentDarkGreen;
+}
+
+.wh-dataitem-body tr:nth-child(even){
+  background: $accentGreen;
+}
+
+.wh-dataitems-btn{
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50px;
+  background: $mainGreen;
+  color: $mainOrange;
+  font-weight: bold;
+}
+
+.wh-dataitems-btn:hover{
+  background: $mainOrange;
+  color: $mainGreen;
+  border: solid 3px $mainGreen;
 }
 
 @media screen and (max-width: 992px) {
