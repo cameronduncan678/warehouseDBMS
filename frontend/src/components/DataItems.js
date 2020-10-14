@@ -13,7 +13,7 @@ class DataItems extends React.Component {
                             <tr>
                                 <th className="wh-dataitem-header-1">Name Here</th>
                                 <th className="wh-dataitem-header-2">Amount</th>
-                                <th className="wh-dataitem-header-2">Price/day</th>
+                                <th className="wh-dataitem-header-2">Price/WK</th>
                             </tr>
                         </thead>
                         <tbody className="wh-dataitem-body">

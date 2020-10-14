@@ -10,7 +10,7 @@ class Table extends React.Component {
                             <th className="wh-table-header-1">Order ID</th>
                             <th className="wh-table-header-2">Name</th>
                             <th className="wh-table-header-3">Item Amount</th>
-                            <th className="wh-table-header-price">Price/day</th>
+                            <th className="wh-table-header-price">Price/WK</th>
                             <th className="wh-table-header-4">Deadline</th>
                             <th className="wh-table-header-5">Status</th>
                             <th className="wh-table-header-6">Location</th>

@@ -5,9 +5,9 @@ import GraphCard from './GraphCard';
 import DashStats1 from './DashStats1';
 import DashStats2 from './DashStats2';
 
-class Dashboard extends React.Component{
-    render(){
-        return(
+class Dashboard extends React.Component {
+    render() {
+        return (
             <main className="section">
                 <section className="wh-dashboard-container">
                     <div className="row">

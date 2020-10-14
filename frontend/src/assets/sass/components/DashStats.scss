@@ -1,25 +1,106 @@
 @import '../import/colors.scss';
 
 .wh-stats1 {
-  height: 300px;
   width: 100%;
   background: $mainOrange;
   border-radius: 5px;
 }
 
-.wh-stats2 {
+.wh-stats1-col{
   height: 300px;
+}
+
+.wh-status-title{
+  font-size: 20px;
+  font-weight: bold;
+  color: $mainGreen;
+}
+
+.wh-status-stats{
+  height: 230px;
+}
+
+.wh-status-stats div{
+  margin-top: 20px;
+  width: 40%;
+}
+
+.wh-stats2 {
   width: 100%;
   background: $mainGreen;
   border-radius: 5px;
 }
 
+.wh-income{
+  width: 40%;
+  margin-top: 25px;
+  height: 250px;
+}
+
+.wh-income-total{
+  width: 90%;
+  margin: 0 auto;
+  height: 150px;
+}
+
+.wh-income-total div{
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  padding: 50px;
+  font-weight: bold;
+  color: $mainOrange;
+}
+
+.wh-income-total-text{
+  width: 90%;
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50px;
+  background: $mainOrange;
+  color: $mainGreen;
+}
+
+.wh-loc-income{
+  height: 250px;
+}
+
+.wh-loc-income-box{
+  width: 90%;
+  background: $darkGreen;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 50px; 
+  overflow-x: scroll;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
+.wh-loc-income-wgt{
+  width: 150px;
+  height: 100%;
+  display: inline-block;
+  color: $mainOrange
+}
+
+.wh-loc-income-wgt i{
+  font-size: 40px;
+  padding-left: 50px;
+  padding-top: 30px;
+  text-align: center;
+}
+.wh-loc-income-wgt p{
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+
 @media screen and (max-width: 992px) {
   .wh-stats1 {
-    height: 200px;
   }
 
   .wh-stats2 {
-    height: 200px;
   }
 }
