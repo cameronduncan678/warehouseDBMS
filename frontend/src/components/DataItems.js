@@ -13,18 +13,28 @@ class DataItems extends React.Component {
                             <tr>
                                 <th className="wh-dataitem-header-1">Name Here</th>
                                 <th className="wh-dataitem-header-2">Amount</th>
+                                <th className="wh-dataitem-header-2">Price/day</th>
                             </tr>
                         </thead>
                         <tbody className="wh-dataitem-body">
                             <tr>
                                 <td>Storage Item</td>
                                 <td>5</td>
+                                <td>£ 520</td>
                             </tr>
                             <tr>
                                 <td>Item for Rent</td>
                                 <td>8</td>
+                                <td>£ 1000</td>
                             </tr>
                         </tbody>
+                        <tfoot className="wh-dataitem-footer">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td className="wh-dataitem-footer-total">£ 1520</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
                 <div className="section ">

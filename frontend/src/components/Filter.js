@@ -1,8 +1,8 @@
 import React from 'react';
 
-class Filter extends React.Component{
-    render(){
-        return(
+class Filter extends React.Component {
+    render() {
+        return (
             <div className="wh-filter-bar">
                 <div className="row">
                     <div className="wh-filter-widget-title col s4 m1">
@@ -14,11 +14,11 @@ class Filter extends React.Component{
                         </div>
                     </div>
                     <div className="wh-filter-widget-title col s4 m1">
-                        <p>Name:</p>
+                        <p>Status:</p>
                     </div>
                     <div className="wh-filter-widget-input col s8 m2">
                         <div className="wh-filter-input-textbox">
-                            <input type="text"></input>
+                            <input type="select"></input>
                         </div>
                     </div>
                     <div className="wh-filter-widget-title col s5 m2">

@@ -11,9 +11,6 @@
   color: $mainGreen;
 }
 
-.wh-table-thead {
-}
-
 .wh-table-header-1 {
   width: 250px;
   background: $mainOrange;
@@ -45,6 +42,11 @@
 }
 
 .wh-table-header-7 {
+  width: 150px;
+  background: $mainOrange;
+}
+
+.wh-table-header-price{
   width: 150px;
   background: $mainOrange;
 }

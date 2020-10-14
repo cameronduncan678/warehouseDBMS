@@ -26,20 +26,32 @@
 .wh-dataItems{width:90%;margin:0 auto;height:700px;border-radius:5px;background:#ff7d1c}
 .wh-dataItems-table{width:90%;margin:0 auto;color:#047067;height:550px;overflow:scroll;background:grey;padding-top:0}
 .wh-dataItems-header{background:#047067;height:60px;border-radius:5px}.wh-dataItems-header span{font-size:30px;padding-left:20px;color:#ff7d1c;font-weight:bold}
-.wh-dataitem-header-1{width:80%;color:#047067;background:#ff7d1c}.wh-dataitem-header-2{width:20%;color:#047067;background:#ff7d1c}
-.wh-datapacket{width:90%;margin:0 auto;height:700px;border-radius:5px;background:#047067}
+.wh-dataitem-header-1{width:60%;color:#047067;background:#ff7d1c}.wh-dataitem-header-2{width:20%;color:#047067;background:#ff7d1c}
 .wh-dataitems-addnew{width:50%;margin:0 auto;text-align:center}.wh-dataitem-body tr{background:white}
 .wh-dataitem-body td{border:solid 1px #b5c0bc}.wh-dataitem-body tr:nth-child(even){background:#d1dfda}
+.wh-dataitem-footer{background:#047067;color:#ff7d1c;border:solid 1px #ff7d1c}.wh-dataitem-footer-total{font-weight:bold}
 .wh-dataitems-btn{width:100%;height:40px;font-size:20px;border-radius:50px;background:#047067;color:#ff7d1c;font-weight:bold}
 .wh-dataitems-btn:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
+.wh-datapacket{width:90%;margin:0 auto;height:700px;border-radius:5px;background:#047067;padding-top:20px}
+.wh-data-name{width:90%;height:50px;margin:0 auto}.wh-data-deadline{width:90%;height:50px;margin:0 auto}
+.wh-data-location{width:90%;height:50px;margin:0 auto}.wh-data-location-wgt{width:70%;background:#ff7d1c;height:100%;border-radius:10px;text-align:center;font-size:20px;padding-top:5px;font-weight:bold;color:#047067}
+.wh-data-location-selection{width:90%;height:200px;border:solid 3px #ff7d1c;border-radius:30px;margin:0 auto;overflow-y:scroll}
+.wh-data-location-item{width:90%;background:#ff7d1c;margin:0 auto;height:40px;margin-top:20px;margin-bottom:20px;border-radius:50px;padding-top:3px;padding-left:20px;font-size:20px;font-weight:bold;color:#047067}
+.wh-data-location-item button{height:30px;background:#d1dfda;float:right;margin-right:10px;width:30px;border-radius:50px;margin-top:1.5px}
+.wh-data-status{height:50px;width:90%;margin:0 auto}.wh-data-submit{width:90%;height:50px;margin:0 auto}
+.wh-data-wgt{width:30%;height:100%;background:#ff7d1c;border-radius:10px;float:left;text-align:center;font-size:20px;padding-top:5px;font-weight:bold;color:#047067}
+.wh-data-input{width:60%;margin-left:5%;background:#d1dfda;height:100%;float:left;border-radius:10px}
+.wh-data-submit-btn{height:100%;width:40%;border-radius:50px;background:#ff7d1c;color:#047067;font-size:20px;font-weight:bold}
+.wh-data-submit-btn:hover{background:#047067;border:solid 3px #ff7d1c;color:#ff7d1c}
 @media screen and (max-width:992px){.wh-datapacket{margin-top:30px}}.wh-newData{width:20%}
 .wh-newData-btn{width:100%;height:50px;border-radius:50px;font-size:20px;font-weight:bold;background:#ff7d1c;color:#047067}
 .wh-newData-btn:hover{background:#047067;color:#ff7d1c;border:solid 3px #ff7d1c}.wh-table-section{height:450px;background:#ff7d1c;border-radius:5px;overflow:scroll}
 .wh-table{color:#047067}.wh-table-header-1{width:250px;background:#ff7d1c}.wh-table-header-2{width:350px;background:#ff7d1c}
 .wh-table-header-3{width:270px;background:#ff7d1c}.wh-table-header-4{width:300px;background:#ff7d1c}
 .wh-table-header-5{width:200px;background:#ff7d1c}.wh-table-header-6{width:250px;background:#ff7d1c}
-.wh-table-header-7{width:150px;background:#ff7d1c}.wh-table-data{background:white}
-.wh-table-data:nth-child(even){background:#d1dfda}.wh-table-status-ok{background:green;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px}
+.wh-table-header-7{width:150px;background:#ff7d1c}.wh-table-header-price{width:150px;background:#ff7d1c}
+.wh-table-data{background:white}.wh-table-data:nth-child(even){background:#d1dfda}
+.wh-table-status-ok{background:green;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px}
 .wh-table-status-warning{background:orange;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px}
 .wh-table-status-over{background:red;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px}
 .wh-table-link-btn{background:#047067;text-align:center;color:white;font-weight:bold;width:40%;border-radius:10px;font-size:25px;margin:0 auto;cursor:pointer}
