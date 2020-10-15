@@ -13,11 +13,55 @@
   background: $mainOrange;
 }
 
+.wh-dataItem-id{
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.wh-dataItem-id-wgt{
+  width: 20%;
+  height: 100%;
+  float: left;
+  background: $mainGreen;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  padding: 13px;
+  color: $mainOrange;
+  font-weight: bold;
+}
+
+.wh-dataItem-id-input{
+  width: 45%;
+  height: 100%;
+  margin-left: 2%;
+  float: left;
+  background: $accentGreen;
+  border-radius: 5px;
+}
+
+.wh-dataItem-id-btn{
+  width: 10%;
+  height: 100%;
+  float: left;
+  margin-left: 2%;
+  background: $mainGreen;
+  border-radius: 5px;
+}
+
+.wh-dataItem-id-btn:hover{
+  background: $mainOrange;
+  color: $mainGreen;
+  border: 3px solid $mainGreen;
+}
+
 .wh-dataItems-table{
   width: 90%;
   margin: 0 auto;
   color: $mainGreen;
-  height: 550px;
+  height: 500px;
   overflow: scroll;
   background: grey;
   padding-top: 0;

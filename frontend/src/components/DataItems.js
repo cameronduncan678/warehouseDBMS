@@ -7,6 +7,13 @@ class DataItems extends React.Component {
                 <div className="wh-dataItems-header">
                     <span>Items</span>
                 </div>
+                <div className="wh-dataItem-id">
+                    <span className="wh-dataItem-id-wgt">Renting ID</span>
+                    <span className="wh-dataItem-id-input">
+                        <input type="text"></input>
+                    </span>
+                    <span className="wh-dataItem-id-btn btn"></span>
+                </div>
                 <div className="section wh-dataItems-table">
                     <table>
                         <thead>
