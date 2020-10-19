@@ -1,0 +1,16 @@
+{
+    "rentals": [
+        {
+            "orderId": "b4d0249e116d486589f2cb65985cb1d4",
+            "client": "jackob soldin",
+            "itemsId": "5a86d3227c184cfa863088f302da7a99",
+            "itemQuantity": 13,
+            "spaces": 13,
+            "slots": 2,
+            "pricePerWeek": 2600,
+            "LeaseEnd": "12/10/2021",
+            "status": "storage",
+            "location": "manchester"
+        }
+    ]
+}

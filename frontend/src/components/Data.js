@@ -49,7 +49,12 @@ class Data extends React.Component {
                     <div className="wh-data-status">
                         <div className="wh-data-wgt">Status</div>
                         <div className="wh-data-input">
-                            <input type="select"></input>
+                            <select className="browser-defaul" style={{ display: "block" }}>
+                                <option value="Storage" className="green">Storage</option>
+                                <option value="warning" className="orange">Warning</option>
+                                <option value="Over" className="red">Over</option>
+                                <option value="Vacant" className="grey">Vacant</option>
+                            </select>
                         </div>
                     </div>
                 </div>

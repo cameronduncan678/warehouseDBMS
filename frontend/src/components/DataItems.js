@@ -12,7 +12,9 @@ class DataItems extends React.Component {
                     <span className="wh-dataItem-id-input">
                         <input type="text"></input>
                     </span>
-                    <span className="wh-dataItem-id-btn btn"></span>
+                    <span className="wh-dataItem-id-btn btn">
+                        <i className="fas fa-file-search"></i>
+                    </span>
                 </div>
                 <div className="section wh-dataItems-table">
                     <table>

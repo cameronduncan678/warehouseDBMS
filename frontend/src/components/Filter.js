@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Filter extends React.Component {
+
     render() {
         return (
             <div className="wh-filter-bar">
@@ -18,7 +19,12 @@ class Filter extends React.Component {
                     </div>
                     <div className="wh-filter-widget-input col s8 m2">
                         <div className="wh-filter-input-textbox">
-                            <input type="select"></input>
+                            <select className="browser-defaul" style={{ display: "block" }}>
+                                <option value="Storage" className="green">Storage</option>
+                                <option value="warning" className="orange">Warning</option>
+                                <option value="Over" className="red">Over</option>
+                                <option value="Vacant" className="grey">Vacant</option>
+                            </select>
                         </div>
                     </div>
                     <div className="wh-filter-widget-title col s5 m2">

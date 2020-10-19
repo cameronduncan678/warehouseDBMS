@@ -1,0 +1,19 @@
+[
+    {
+        "itemsId": "5a86d3227c184cfa863088f302da7a99",
+        "items": [
+            {
+                "itemName": "Highschool PCs",
+                "itemQuantity": 6
+            },
+            {
+                "itemName": "Office PCs",
+                "itemQuantity": 4
+            },
+            {
+                "itemName": "Retail PCs",
+                "itemQuantity": 3
+            }
+        ]
+    }
+]
