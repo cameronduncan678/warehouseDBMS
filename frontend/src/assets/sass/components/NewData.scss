@@ -19,3 +19,27 @@
   color: $mainOrange;
   border: solid 3px $mainOrange;
 }
+
+.wh-newData-back{
+  background: $mainGreen;
+  color: $mainOrange;
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wh-newData-back:hover{
+  background: $mainOrange;
+  color: $mainGreen;
+  border: solid 3px $mainGreen;
+}
+
+.wh-newDatapacket{
+  width: 100%;
+  height: 600px;
+  border-radius: 5px;
+  background: $mainGreen;
+  padding-top: 20px;
+}

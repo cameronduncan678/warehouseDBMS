@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
 
 //Components
 import Header from './components/Header';
@@ -9,18 +13,20 @@ import Database from './components/Database';
 import Items from './components/Items';
 
 class App extends Component {
-  render(){
+  render() {
     return (
-      <div className="App">
-        <Router>
-          <Header />
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/database" component={Database} />
-            <Route path="/items" component={Items} />
-          </Switch>
-        </Router >
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <Router>
+            <Header />
+            <Switch>
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/database" component={Database} />
+              <Route path="/items" component={Items} />
+            </Switch>
+          </Router >
+        </div>
+      </Provider>
     );
   }
 }
