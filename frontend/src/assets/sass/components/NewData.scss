@@ -38,8 +38,36 @@
 
 .wh-newDatapacket{
   width: 100%;
-  height: 600px;
+  height: 1100px;
   border-radius: 5px;
   background: $mainGreen;
   padding-top: 20px;
 }
+
+.wh-NewDataItems-table{
+  width: 90%;
+  margin: 30px auto;
+  color: $mainGreen;
+  height: 350px;
+  overflow: scroll;
+  background: grey;
+  padding-top: 0;
+}
+
+.wh-addItem-btn{
+  width: 10%;
+  height: 100%;
+  float: left;
+  background: $mainOrange;
+  border-radius: 10px;
+  color: $mainGreen;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.wh-addItem-btn:hover{
+  background: $mainGreen;
+  color: $mainOrange;
+  border: solid 3px $mainOrange;
+}
+

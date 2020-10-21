@@ -29,19 +29,19 @@ class Data extends React.Component {
                     <div className="wh-data-location-selection">
                         <div className="wh-data-location-item">
                             <span>Manchester</span>
-                            <button className="btn"></button>
+                            <input className="browser-default" name="location" type="radio"></input>
                         </div>
                         <div className="wh-data-location-item">
                             <span>New Castle</span>
-                            <button className="btn"></button>
+                            <input className="browser-default" name="location" type="radio"></input>
                         </div>
                         <div className="wh-data-location-item">
                             <span>Edinburgh</span>
-                            <button className="btn"></button>
+                            <input className="browser-default" name="location" type="radio"></input>
                         </div>
                         <div className="wh-data-location-item">
                             <span>Aberdeen</span>
-                            <button className="btn"></button>
+                            <input className="browser-default" name="location" type="radio"></input>
                         </div>
                     </div>
                 </div>

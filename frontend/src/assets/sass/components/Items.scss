@@ -84,7 +84,7 @@
 
 
 .wh-dataitem-header-1{
-  width: 60%;
+  width: 50%;
   color: $mainGreen;
   background: $mainOrange;
 }
@@ -200,11 +200,12 @@
   font-size: 20px;
   font-weight: bold;
   color: $mainGreen;
+  text-transform: capitalize;
 }
 
-.wh-data-location-item button{
+.wh-data-location-item input{
   height: 30px;
-  background: $accentGreen;
+  background-color: $mainGreen;
   float: right;
   margin-right: 10px;
   width: 30px;

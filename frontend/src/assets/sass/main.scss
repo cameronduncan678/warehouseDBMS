@@ -1,0 +1,5 @@
+[type="radio"]:not(:checked), [type="radio"]:checked {
+    position: static !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
