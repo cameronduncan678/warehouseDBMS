@@ -21,9 +21,9 @@
 }
 
 .wh-newData-back{
-  background: $mainGreen;
-  color: $mainOrange;
-  width: 100%;
+  background: $mainOrange;
+  color: $mainGreen;
+  width: 40%;
   height: 50px;
   border-radius: 50px;
   font-size: 20px;
@@ -31,14 +31,14 @@
 }
 
 .wh-newData-back:hover{
-  background: $mainOrange;
-  color: $mainGreen;
-  border: solid 3px $mainGreen;
+  background: $mainGreen;
+  color: $mainOrange;
+  border: solid 3px $mainOrange;
 }
 
 .wh-newDatapacket{
   width: 100%;
-  height: 1100px;
+  height: 1200px;
   border-radius: 5px;
   background: $mainGreen;
   padding-top: 20px;
@@ -71,3 +71,89 @@
   border: solid 3px $mainOrange;
 }
 
+.wh-addData-modalEls{
+  margin-top: 10px;
+}
+
+.wh-addData-input{
+  width: 90%;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.wh-addData-input-title{
+  height: 100%;
+  background: $mainGreen;
+  width: 20%;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
+  color: $mainOrange;
+  font-weight: bold;
+  border-radius: 5px;
+  float: left;
+}
+
+.wh-addData-input-feild{
+  float: left;
+  width: 70%;
+  background: $accentGreen;
+  height: 100%;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.wh-addData-input-feild input{
+  height: 100%;
+}
+
+.wh-addData-commit-btn{
+  height: 100%;
+  margin-right: 10px;
+  width: 20%;
+  font-size: 16px;
+  font-weight: bold;
+  background: $mainGreen;
+  color: $mainOrange;
+  border-radius: 5px;
+}
+
+.wh-addData-commit-btn:hover{
+  background: $mainOrange;
+  color: $mainGreen;
+  border-radius: solid 3px $mainGreen;
+}
+
+.wh-addData-cancel-btn{
+  height: 100%;
+  margin-right: 10px;
+  width: 20%;
+  font-size: 16px;
+  font-weight: bold;
+  background: red;
+  color: $mainGreen;
+  border-radius: 5px;
+}
+
+.wh-addData-cancel-btn:hover{
+  background: $mainOrange;
+  color: red;
+  border-radius: solid red 3px;
+}
+
+.wh-newData-cancel{
+  height: 100%;
+  width: 40%;
+  border-radius: 50px;
+  background: red;
+  color: $mainGreen;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wh-newData-cancel:hover{
+  background: $mainGreen;
+  color: red;
+  border: solid 3px red;
+}

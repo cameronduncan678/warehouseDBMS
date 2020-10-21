@@ -1,6 +1,8 @@
 import React from 'react';
 import { fetchLocations } from '../actions/locationsActions';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
+import jQuery from 'jquery';
 
 class NewData extends React.Component {
     constructor(props) {
@@ -9,16 +11,31 @@ class NewData extends React.Component {
             clientName: '',
             leaseDate: '',
             location: '',
-            items: [
-                { itemName: 'Storage Item 1', amount: 3, pricePerWeek: 600 },
-                { itemName: 'Storage Item 2', amount: 6, pricePerWeek: 1200 }
-            ],
+            items: [],
             priceTotal: 0,
+            showModal: false,
+            itemObj_name: '',
+            itemObj_amount: 0,
+            itemObj_ppw: 0
         };
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     };
+
+    resetState = () => {
+        this.setState({
+            clientName: '',
+            leaseDate: '',
+            location: '',
+            items: [],
+            priceTotal: 0,
+            showModal: false,
+            itemObj_name: '',
+            itemObj_amount: 0,
+            itemObj_ppw: 0
+        });
+    }
 
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
@@ -29,7 +46,8 @@ class NewData extends React.Component {
         const newData = {
             client: this.state.clientName,
             LeaseEnd: this.state.leaseDate,
-            location: this.state.location
+            location: this.state.location,
+            items: this.state.items
         }
 
         console.log(newData);
@@ -56,9 +74,61 @@ class NewData extends React.Component {
         this.state.items.push(itemObj);
     }
 
+    openModal = () => {
+        this.setState({ showModal: true });
+    }
+
+    closeModal = () => {
+        this.setState({ showModal: false });
+    }
+
+    pushItem = () => {
+
+        var convert = parseInt(this.state.itemObj_amount);
+        var priceGen = () => {
+            var slots = (convert / 5) * 500;
+            var spaces = (convert % 5) * 200;
+
+            if (slots) {
+                return slots + spaces;
+            }
+            return spaces;
+        }
+        var itemObj = {
+            itemName: this.state.itemObj_name,
+            amount: convert,
+            pricePerWeek: priceGen()
+        }
+        this.state.items.push(itemObj);
+
+        this.setState({
+            showModal: false,
+            itemObj_name: '',
+            itemObj_amount: 0,
+            itemObj_ppw: 0
+        });
+    }
+
+    newDataBack = () => {
+        jQuery('#newDataUI').hide();
+        jQuery('#databaseUI').show();
+        this.resetState();
+    }
+
+    deleteItem = (index) => {
+        var itemArr = [];
+        for (var i = 0; i < this.state.items.length; i++) {
+            if (i === index) {
+                continue;
+            }
+            itemArr.push(this.state.items[i])
+        }
+        this.setState({ items: itemArr });
+    }
+
     render() {
 
-        const locationWdgts = this.props.localLocations.map(item => (
+        const locationWdgts = this.props.localLocations.map((item) => (
             <div key={item.location} className="wh-data-location-item">
                 <span>{item.location}</span>
                 {/* <button className="btn"></button> */}
@@ -66,12 +136,14 @@ class NewData extends React.Component {
             </div>
         ));
 
-        const itemsRows = this.state.items.map(item => (
-            <tr key={item.itemName}>
+        const itemsRows = this.state.items.map((item, index) => (
+            <tr key={index}>
                 <td>{item.itemName}</td>
                 <td>{item.amount}</td>
                 <td>£{item.pricePerWeek}</td>
-                <td></td>
+                <td>
+                    <div className="btn wh-dataitem-body-del" onClick={() => this.deleteItem(index)}><i className="fas fa-trash-alt"></i></div>
+                </td>
             </tr>
         ));
 
@@ -110,7 +182,7 @@ class NewData extends React.Component {
                                 <th className="wh-dataitem-header-1">Name Here</th>
                                 <th className="wh-dataitem-header-2">Amount</th>
                                 <th className="wh-dataitem-header-2">Price/WK</th>
-                                <th className="wh-dataitem-header-2">Edit</th>
+                                <th className="wh-dataitem-header-2"></th>
                             </tr>
                         </thead>
                         <tbody className="wh-dataitem-body">
@@ -128,16 +200,47 @@ class NewData extends React.Component {
                 </div>
                 <div className="section">
                     <div className="wh-data-submit">
-                        <button className="wh-addItem-btn btn">
+                        <button className="wh-addItem-btn btn" onClick={this.openModal}>
                             Add Item
                         </button>
                     </div>
                 </div>
+                <Modal className="wh-AddData-modal" isOpen={this.state.showModal} overlayClassName="wh-modal-Overlay">
+                    <div className="wh-addData-modalEls">
+                        <div className="section">
+                            <div className="wh-addData-input">
+                                <div className="wh-addData-input-title">Item Name:</div>
+                                <div className="wh-addData-input-feild" >
+                                    <input type="text" name="itemObj_name" onChange={this.onChange}></input>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="section">
+                            <div className="wh-addData-input">
+                                <div className="wh-addData-input-title">Quantity:</div>
+                                <div className="wh-addData-input-feild" >
+                                    <input type="text" name="itemObj_amount" onChange={this.onChange}></input>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="section">
+                            <div className="wh-addData-input">
+                                <button className="wh-addData-commit-btn btn" onClick={this.pushItem}>Commit Item</button>
+                                <button className="wh-addData-cancel-btn btn" onClick={this.closeModal}>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </Modal>
                 <div className="section">
                     <div className="wh-data-submit">
                         <button className="wh-data-submit-btn btn" onClick={this.onSubmit}>
                             Commit Data
                         </button>
+                    </div>
+                </div>
+                <div className="section">
+                    <div className="wh-data-submit">
+                        <button className="wh-newData-cancel btn" onClick={this.newDataBack}>Cancel</button>
                     </div>
                 </div>
             </div>

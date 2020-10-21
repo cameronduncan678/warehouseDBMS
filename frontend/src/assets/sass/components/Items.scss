@@ -263,6 +263,17 @@
   color: $mainOrange;
 }
 
+.wh-dataitem-body-del{
+  background: $mainGreen;
+  color: $mainOrange;
+}
+
+.wh-dataitem-body-del:hover {
+  background: $mainOrange;
+  color: $mainGreen;
+  border: solid 3px $mainGreen;
+}
+
 @media screen and (max-width: 992px) {
   .wh-datapacket {
     margin-top: 30px;

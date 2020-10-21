@@ -20,11 +20,6 @@ class Database extends React.Component {
         jQuery('#newDataUI').show();
     }
 
-    newDataBack = () => {
-        jQuery('#newDataUI').hide();
-        jQuery('#databaseUI').show();
-    }
-
     render() {
         return (
             <div className="wh-database-container">
@@ -48,11 +43,6 @@ class Database extends React.Component {
                     <div className="section">
                         <div className="wh-database-newData">
                             <h4 className="wh-database-newData-title">New Data</h4>
-                        </div>
-                    </div>
-                    <div className="section">
-                        <div className="wh-newData">
-                            <button className="wh-newData-back btn" onClick={this.newDataBack}>Cancel</button>
                         </div>
                     </div>
                     <div className="section">
