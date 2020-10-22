@@ -53,11 +53,13 @@
 }
 
 .wh-income-total-text{
+  padding-top: 5px;
   width: 90%;
   margin: 0 auto;
   height: 50px;
   text-align: center;
   font-size: 25px;
+  font-weight: bold;
   border-radius: 50px;
   background: $mainOrange;
   color: $mainGreen;

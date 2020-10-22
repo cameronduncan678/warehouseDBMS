@@ -1,6 +1,31 @@
 import { FETCH_RENTING } from './types';
 import axios from 'axios';
 
+export const fetchRenting = () => dispatch => {
+    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
+        { headers: { "Access-Control-Allow-Origin": "*" } })
+        .then((packet) => {
+            dispatch({
+                type: FETCH_RENTING,
+                payload: packet.data.rentals
+            })
+        })
+};
+
+//Object from Add Data rollout
+// data = {
+//     LeaseEnd: "",
+//     client: "",
+//     items: [
+//         {
+//             amount: 0,
+//             itemName: "",
+//             pricePerWeek: 0
+//         }
+//     ],
+//     location: ""
+// }
+
 // For testing purpose only
 // var dummy = {
 //     orderId: '2cf967b409e64ac1a02fc179c8d6a2e8',
@@ -15,13 +40,10 @@ import axios from 'axios';
 //     location: 'newcastle'
 // };
 
-export const fetchRenting = () => dispatch => {
+export const addRenting = (newData) => dispatch => {
     axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
-            dispatch({
-                type: FETCH_RENTING,
-                payload: packet.data.rentals
-            })
+
         })
-};
+}

@@ -23,6 +23,7 @@ class NewData extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     };
 
+    // Reset to default state
     resetState = () => {
         this.setState({
             clientName: '',
@@ -43,11 +44,25 @@ class NewData extends React.Component {
 
     onSubmit(e) {
         e.preventDefault();
+
+        var amountTotal = () => {
+            var total = 0;
+            this.state.items.forEach(item => {
+                total += item.amount;
+            });
+            return total;
+        }
+
         const newData = {
             client: this.state.clientName,
             LeaseEnd: this.state.leaseDate,
             location: this.state.location,
-            items: this.state.items
+            items: this.state.items,
+            itemQuantity: this.state.items.length,
+            slots: Math.floor(amountTotal() / 5),
+            spaces: amountTotal() % 5,
+            pricePerWeek: this.generateTotal(),
+            status: 'storage'
         }
 
         console.log(newData);
@@ -57,6 +72,7 @@ class NewData extends React.Component {
         this.props.fetchLocations();
     }
 
+    // Generate the total price for all items in Order
     generateTotal = () => {
         var total = 0;
         this.state.items.forEach(item => {
@@ -65,25 +81,18 @@ class NewData extends React.Component {
         return total;
     }
 
-    newItem = (item, quantity, price) => {
-        var itemObj = {
-            itemName: item,
-            amount: quantity,
-            pricePerWeek: price
-        };
-        this.state.items.push(itemObj);
-    }
-
+    // Open the add item modal
     openModal = () => {
         this.setState({ showModal: true });
     }
 
+    // Close the add item modal
     closeModal = () => {
         this.setState({ showModal: false });
     }
 
+    // Push an item to the items state in new data rollout
     pushItem = () => {
-
         var convert = parseInt(this.state.itemObj_amount);
         var priceGen = () => {
             var slots = (convert / 5) * 500;
@@ -109,12 +118,14 @@ class NewData extends React.Component {
         });
     }
 
+    // Return to database view
     newDataBack = () => {
         jQuery('#newDataUI').hide();
         jQuery('#databaseUI').show();
         this.resetState();
     }
 
+    // Delete an item from New Data rollout
     deleteItem = (index) => {
         var itemArr = [];
         for (var i = 0; i < this.state.items.length; i++) {
@@ -126,6 +137,7 @@ class NewData extends React.Component {
         this.setState({ items: itemArr });
     }
 
+    //  Component JSX start here
     render() {
 
         const locationWdgts = this.props.localLocations.map((item) => (
