@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchLocations } from '../actions/locationsActions';
+import { addRenting } from '../actions/rentingActions';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import jQuery from 'jquery';
@@ -42,6 +43,7 @@ class NewData extends React.Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    // Send the new Data to the Database
     onSubmit(e) {
         e.preventDefault();
 
@@ -65,7 +67,8 @@ class NewData extends React.Component {
             status: 'storage'
         }
 
-        console.log(newData);
+        this.props.addRenting(newData);
+        this.newDataBack()
     }
 
     componentDidMount() {
@@ -91,7 +94,7 @@ class NewData extends React.Component {
         this.setState({ showModal: false });
     }
 
-    // Push an item to the items state in new data rollout
+    // Push an item to the items array in new data rollout
     pushItem = () => {
         var convert = parseInt(this.state.itemObj_amount);
         var priceGen = () => {
@@ -264,4 +267,4 @@ const mapStateToProps = state => ({
     localLocations: state.locations.data
 })
 
-export default connect(mapStateToProps, { fetchLocations })(NewData);
+export default connect(mapStateToProps, { fetchLocations, addRenting })(NewData);

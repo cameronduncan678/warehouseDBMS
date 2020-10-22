@@ -1,4 +1,5 @@
-import { FETCH_RENTING } from './types';
+import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING } from './types';
+import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 export const fetchRenting = () => dispatch => {
@@ -26,24 +27,60 @@ export const fetchRenting = () => dispatch => {
 //     location: ""
 // }
 
-// For testing purpose only
-// var dummy = {
-//     orderId: '2cf967b409e64ac1a02fc179c8d6a2e8',
-//     client: 'Angnes Chazhopla',
-//     itemsId: 'c33bceff32b04afb836a8e74f57d0314',
-//     itemQuantity: 4,
-//     spaces: 4,
-//     slots: 0,
-//     pricePerWeek: 800,
-//     LeaseEnd: '09/11/2020',
-//     status: 'storage',
-//     location: 'newcastle'
-// };
-
 export const addRenting = (newData) => dispatch => {
     axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
-
+            var dataArr = packet.data.rentals;
+            newData.orderId = uuidv4();
+            dataArr.unshift(newData);
+            dispatch({
+                type: ADD_RENTING,
+                payload: dataArr
+            })
         })
+}
+
+export const filterRenting = (filterObj) => dispatch => {
+    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
+        { headers: { "Access-Control-Allow-Origin": "*" } })
+        .then((packet) => {
+
+            var filterArr = packet.data.rentals;
+
+            if (filterObj.orderId) {
+                filterArr.forEach(data => {
+                    if (data.orderId === filterObj.orderId) {
+                        filterArr = [data];
+                    }
+                })
+            }
+
+            if (filterObj.status) {
+                var newStatus = [];
+                filterArr.forEach(data => {
+                    if (data.status === filterObj.status) {
+                        newStatus.push(data);
+                    }
+                })
+
+                filterArr = newStatus;
+            }
+
+            if (filterObj.location) {
+                var newLocation = [];
+                filterArr.forEach(data => {
+                    if (data.location === filterObj.location) {
+                        newLocation.push(data);
+                    }
+                })
+
+                filterArr = newLocation;
+            }
+
+            dispatch({
+                type: FILTER_RENTING,
+                payload: filterArr
+            })
+        });
 }
