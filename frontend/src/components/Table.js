@@ -1,7 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Table extends React.Component {
     render() {
+
+        const statusElement = (status) => {
+            switch (status) {
+                case "storage":
+                    return "wh-table-status-ok";
+                case "warning":
+                    return "wh-table-status-warning";
+                case "over":
+                    return "wh-table-status-over";
+                case "vacant":
+                    return "wh-table-status-out";
+                default:
+                    return "wh-table-status-out"
+            }
+        }
+
+        const fetchItems = (id) => {
+            console.log(id);
+        }
 
         const dataItems = this.props.data.map(item => (
             <tr key={item.orderId} className="wh-table-data">
@@ -10,9 +30,15 @@ class Table extends React.Component {
                 <td className="wh-table-data-3">{item.itemQuantity}</td>
                 <td>£{item.pricePerWeek}</td>
                 <td className="wh-table-data-4">{item.LeaseEnd}</td>
-                <td className="wh-table-data-5"><div className="wh-table-status-ok">{item.status}</div></td>
+                <td className="wh-table-data-5"><div className={statusElement(item.status)}>{item.status}</div></td>
                 <td className="wh-table-data-6">{item.location}</td>
-                <td className="wh-table-data-7"><div className="wh-table-link-btn"><i className="fas fa-external-link-square-alt"></i></div></td>
+                <td className="wh-table-data-7">
+                    <Link to="/items" onClick={() => fetchItems(item.itemsId)}>
+                        <div className="wh-table-link-btn">
+                            <i className="fas fa-external-link-square-alt"></i>
+                        </div>
+                    </Link>
+                </td>
             </tr>
         ));
 

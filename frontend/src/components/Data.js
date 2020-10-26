@@ -54,6 +54,7 @@ class Data extends React.Component {
                                 <option value="warning" className="orange">Warning</option>
                                 <option value="Over" className="red">Over</option>
                                 <option value="Vacant" className="grey">Vacant</option>
+                                <option value="none">none</option>
                             </select>
                         </div>
                     </div>
