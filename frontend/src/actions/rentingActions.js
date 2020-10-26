@@ -56,7 +56,7 @@ export const filterRenting = (filterObj) => dispatch => {
                 })
             }
 
-            if (filterObj.status) {
+            if (filterObj.status && filterObj.status !== "none") {
                 var newStatus = [];
                 filterArr.forEach(data => {
                     if (data.status === filterObj.status) {
