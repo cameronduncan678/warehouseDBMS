@@ -1,6 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -33,9 +33,6 @@ class Header extends React.Component {
                         </Link>
                         <Link to="/database">
                             <div className="wh-header-item">Database</div>
-                        </Link>
-                        <Link to="/items">
-                            <div className="wh-header-item">Items</div>
                         </Link>
                         <div className="wh-header-user">John Smith</div>
                         <div className="wh-header-logout">

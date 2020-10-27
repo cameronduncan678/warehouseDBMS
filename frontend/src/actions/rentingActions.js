@@ -1,4 +1,4 @@
-import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING } from './types';
+import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING, ITEM_RENTING } from './types';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
@@ -83,4 +83,25 @@ export const filterRenting = (filterObj) => dispatch => {
                 payload: filterArr
             })
         });
+}
+
+export const itemRenting = (itemId) => dispatch => {
+    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
+        { headers: { "Access-Control-Allow-Origin": "*" } })
+        .then((packet) => {
+            var filterArr = packet.data.rentals;
+            var renting = [];
+            if (itemId) {
+                filterArr.forEach(item => {
+                    if (item.itemsId === itemId) {
+                        renting.push(item);
+                    }
+                })
+            }
+
+            dispatch({
+                type: ITEM_RENTING,
+                payload: renting
+            })
+        })
 }
