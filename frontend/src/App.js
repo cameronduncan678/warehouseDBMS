@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Dashboard from './components/Dasboard';
 import Database from './components/Database';
 import Items from './components/Items';
+import Locations from './components/Locations';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path="/" exact component={Dashboard} />
               <Route path="/database" component={Database} />
               <Route path="/items" component={Items} />
+              <Route path="/locations" component={Locations} />
             </Switch>
           </Router >
         </div>

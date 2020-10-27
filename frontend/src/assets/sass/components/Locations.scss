@@ -1,0 +1,31 @@
+@import '../import/colors.scss';
+
+.wh-locations{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.wh-locations-nav{
+    width: 95%;
+    height: 700px;
+    background: $mainOrange;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.wh-locations-wdgts{
+    width: 95%;
+    height: 700px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.wh-locations-wdgt-dash{
+    height: 500px;
+    background: $mainOrange;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}

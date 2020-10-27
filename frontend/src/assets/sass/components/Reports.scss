@@ -1,0 +1,107 @@
+@import '../import/colors.scss';
+
+.wh-report-container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.wh-report-timeline{
+    margin-top: 20px;
+    height: 700px;
+}
+
+.wh-timeline{
+    width: 90%;
+    height: 100%;
+    background: $mainOrange;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.wh-timeline-title{
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.wh-timeline-title-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: $mainGreen;
+}
+
+.wh-timeline-title-add{
+    height: 50px;
+    width: 50px;
+    background: $mainGreen;
+    float: right;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.wh-timeline-title-add i{
+    margin: 0 auto;
+    color: $mainOrange;
+}
+
+.wh-timeline-reports{
+    height: 550px;
+    width: 90%;
+    background: $mainGreen;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding-top: 20px;
+}
+
+.wh-timeline-reports-wgt{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    height: 70px;
+    width: 90%;
+    background: $mainOrange;
+    border-radius: 5px;
+    padding-top: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.wh-timeline-wgt-date{
+    font-size: 20px;
+    font-weight: bold;
+    color: $mainGreen;
+}
+
+.wh-timeline-wgt-open{
+    font-size: 20px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    color: $mainGreen;
+    margin-left: 10px;
+    background: $mainGreen;
+    float: right;
+    color: $mainOrange;
+}
+
+
+
+.wh-timeline-wgt-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: $mainGreen;
+    margin-left: 10px;
+}
+
+.wh-report-report{
+    margin-top: 20px;
+    height: 700px;
+}
+
+.wh-reportField{
+    width: 90%;
+    height: 100%;
+    background: $mainGreen;
+    margin: 0 auto;
+    border-radius: 10px;
+}

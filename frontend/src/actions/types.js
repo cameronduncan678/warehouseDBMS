@@ -9,3 +9,6 @@ export const FETCH_ITEMS = 'FETCH_ITEMS';
 
 //locations data types
 export const FETCH_LOCATIONS = 'FETCH_LOCATIONS';
+
+//reports data types
+export const FETCH_REPORTS = 'FETCH_REPORTS';
