@@ -8,6 +8,8 @@ class Locations extends React.Component {
         this.props.fetchLocations()
     }
 
+
+
     render() {
 
         const locationNavs = this.props.localLocations.map(warehouse => (
@@ -16,6 +18,15 @@ class Locations extends React.Component {
                 <span>{warehouse.location}</span>
             </div>
         ))
+
+        const projectionCheck = (obj) => {
+            if (obj.projection > obj.targets.income) {
+                return 'wh-projection-green';
+            }
+            else {
+                return 'wh-projection-red';
+            }
+        }
 
         const locationDash = this.props.localLocations.map(warehouse => (
             <div key={warehouse.location} className="wh-locations-wdgt-dash">
@@ -43,22 +54,22 @@ class Locations extends React.Component {
                                 Targets
                             </div>
                             <div className="wh-locations-targets-targets">
-                                73%, 20sl, 40sp, £4500
+                                {warehouse.targets.perc}%, {warehouse.targets.slots}sl, {warehouse.targets.spaces}sp, £{warehouse.targets.income}
+                            </div>
+                            <div className="wh-locations-targets-projections">
+                                Next Month Projections: <span className={projectionCheck(warehouse)}>£{warehouse.projection}</span>
                             </div>
                             <div className="wh-locations-targets-new">
                                 New Targets
                             </div>
                         </div>
-                        <div className="wh-locations-projections">
-                            <div className="wh-locations-projections-title">
-                                Next Month Projections:<span>£5800</span>
+                        <div className="wh-locations-status">
+                            <div className="wh-locations-status-statuses">
+                                <span className="wh-locations-status-store">83%</span>
+                                <span className="wh-locations-status-warn">11%</span>
+                                <span className="wh-locations-status-over">2%</span>
                             </div>
-                            <div className="wh-locations-projections-projection">
-                                <span className="wh-locations-proj-store">83%</span>
-                                <span className="wh-locations-proj-warn">11%</span>
-                                <span className="wh-locations-proj-over">2%</span>
-                            </div>
-                            <div className="wh-locations-projections-bar purple">
+                            <div className="wh-locations-status-bar purple">
 
                             </div>
                         </div>

@@ -109,7 +109,7 @@
 }
 
 .wh-locations-targets{
-    height: 150px;
+    height: 200px;
     border: solid 3px $mainGreen;
     border-radius: 10px;
 }
@@ -131,13 +131,35 @@
     margin-left: 10px;
 }
 
+.wh-locations-targets-projections{
+    height: 50px;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 15px;
+    background: $mainGreen;
+    padding-top: 5px;
+    border-radius: 10px;
+    width: 90%;
+    color: $mainOrange;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.wh-projection-red{
+    color: red;
+}
+
+.wh-projection-green{
+    color: lightgreen;
+}
+
 .wh-locations-targets-new{
     height: 40px;
     background: $mainGreen;
     width: 30%;
     font-size: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 10px;
     border-radius: 50px;
     color: $mainOrange;
@@ -145,13 +167,13 @@
     padding-top: 2px;
 }
 
-.wh-locations-projections{
+.wh-locations-status{
     margin-top: 10px;
     background: $mainGreen;
     border-radius: 5px;
 }
 
-.wh-locations-projections-title{
+.wh-locations-status-title{
     height: 40px;
     color: $mainOrange;
     font-size: 20px;
@@ -160,33 +182,33 @@
     
 }
 
-.wh-locations-projections-title span{
+.wh-locations-status-title span{
     margin-left: 20px;
     color: lightgreen;
 }
 
-.wh-locations-projections-projection{
+.wh-locations-status-statuses{
     font-size: 20px;
     margin-left: 10px;
 }
 
-.wh-locations-projections-projection span{
+.wh-locations-status-statuses span{
     margin-left: 10px;
 }
 
-.wh-locations-proj-store{
+.wh-locations-status-store{
     color: lightgreen;
 }
 
-.wh-locations-proj-warn{
+.wh-locations-status-warn{
     color: orange;
 }
 
-.wh-locations-proj-over{
+.wh-locations-status-over{
     color: red;
 }
 
-.wh-locations-projections-bar{
+.wh-locations-status-bar{
     height: 100px;
 }
 
