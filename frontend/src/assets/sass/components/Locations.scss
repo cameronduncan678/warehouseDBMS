@@ -3,19 +3,42 @@
 .wh-locations{
     width: 90%;
     margin: 0 auto;
-    margin-top: 30px;
 }
 
 .wh-locations-nav{
     width: 95%;
+    margin-top: 30px;
     height: 700px;
     background: $mainOrange;
     margin: 0 auto;
     border-radius: 10px;
+    padding-top: 20px;
+    overflow-y: scroll;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.wh-location-nav-link{
+    width: 90%;
+    margin: 0 auto;
+    height: 70px;
+    background: $mainGreen;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: $mainOrange;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.wh-location-nav-link span{
+    padding-left: 10px;
+    font-weight: bold;
 }
 
 .wh-locations-wdgts{
     width: 95%;
+    margin-top: 30px;
     height: 700px;
     margin: 0 auto;
     border-radius: 10px;
@@ -28,4 +51,151 @@
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 10px;
+}
+
+.wh-locations-wdgts-title{
+    width: 100%;
+    height: 80px;
+    background: $mainGreen;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+.wh-locations-wdgts-title-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: $mainOrange;
+    margin-top: 20px;
+}
+
+.wh-locations-wdgts-title-title span{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.wh-locations-wdgts-title-income{
+    font-size: 30px;
+    font-weight: bold;
+    color: $mainOrange;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.wh-locations-wdgts-title-income span{
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.wh-locations-wdgts-stats{
+    height: 400px;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.wh-locations-wdgts-stats-title{
+    height: 40px;
+    font-size: 20px;
+    color: $mainGreen;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.wh-locations-wdgts-stats-ul{
+    width: 100%;
+    border: solid 3px $mainGreen;
+    height: 3px;
+    border-radius: 50px;
+}
+
+.wh-locations-targets{
+    height: 150px;
+    border: solid 3px $mainGreen;
+    border-radius: 10px;
+}
+
+.wh-locations-targets-title{
+    height: 40px;
+    background: $mainGreen;
+    color: $mainOrange;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.wh-locations-targets-targets{
+    height: 30px;
+    font-size: 30px;
+    color: $mainGreen;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.wh-locations-targets-new{
+    height: 40px;
+    background: $mainGreen;
+    width: 30%;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 50px;
+    color: $mainOrange;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
+.wh-locations-projections{
+    margin-top: 10px;
+    background: $mainGreen;
+    border-radius: 5px;
+}
+
+.wh-locations-projections-title{
+    height: 40px;
+    color: $mainOrange;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    
+}
+
+.wh-locations-projections-title span{
+    margin-left: 20px;
+    color: lightgreen;
+}
+
+.wh-locations-projections-projection{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.wh-locations-projections-projection span{
+    margin-left: 10px;
+}
+
+.wh-locations-proj-store{
+    color: lightgreen;
+}
+
+.wh-locations-proj-warn{
+    color: orange;
+}
+
+.wh-locations-proj-over{
+    color: red;
+}
+
+.wh-locations-projections-bar{
+    height: 100px;
+}
+
+@media screen and (max-width: 600px){
+    .wh-locations-wdgt-dash{
+        height: 1000px;
+    }
+
+    #locationNav{
+        display: none;
+    }
 }
