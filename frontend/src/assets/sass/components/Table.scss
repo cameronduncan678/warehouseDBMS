@@ -59,6 +59,11 @@
   background: $accentGreen;
 }
 
+.wh-table-vacant{
+  background: repeating-linear-gradient(45deg,$accentGreen, $accentGreen 10px,$accentDarkGreen 10px, $accentDarkGreen 15px);
+  color: black;
+}
+
 .wh-table-data-6{
   text-transform: capitalize;
 }

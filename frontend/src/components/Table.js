@@ -1,42 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Table extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            orderId: "",
-            client: "",
-            itemsId: "",
-            itemQuantity: 0,
-            spaces: 0,
-            slots: 0,
-            pricePerWeek: 0,
-            LeaseEnd: "",
-            status: "",
-            location: "",
-            items: []
-        }
-    }
-
-    async editData(index) {
-        var editData = this.props.data[index];
-
-        this.setState({
-            orderId: editData.orderId,
-            client: editData.client,
-            itemsId: editData.itemsId,
-            itemQuantity: editData.itemQuantity,
-            spaces: editData.spaces,
-            slots: editData.slots,
-            pricePerWeek: editData.pricePerWeek,
-            LeaseEnd: editData.LeaseEnd,
-            status: editData.status,
-            location: editData.location,
-            items: editData.items
-        })
-
-
-    }
 
     render() {
 
@@ -55,22 +20,56 @@ class Table extends React.Component {
             }
         }
 
-        const dataItems = this.props.data.map((row, index) => (
-            <tr key={row.orderId} className="wh-table-data">
-                <td className="wh-table-data-1">{row.orderId}</td>
-                <td className="wh-table-data-2">{row.client}</td>
-                <td className="wh-table-data-3">{row.itemQuantity}</td>
-                <td>£{row.pricePerWeek}</td>
-                <td className="wh-table-data-4">{row.LeaseEnd}</td>
-                <td className="wh-table-data-5"><div className={statusElement(row.status)}>{row.status}</div></td>
-                <td className="wh-table-data-6">{row.location}</td>
-                <td className="wh-table-data-7">
-                    <div className="wh-table-link-btn" onClick={() => this.editData(index)}>
-                        <i className="fas fa-external-link-square-alt"></i>
-                    </div>
-                </td>
-            </tr>
-        ));
+        const dataItems = this.props.data.map((row) => {
+            if (row.status === "vacant") {
+                return (
+                    <tr key={row.orderId} className="wh-table-vacant">
+                        <td className="wh-table-data-1">{row.orderId}</td>
+                        <td className="wh-table-data-2">{row.client}</td>
+                        <td className="wh-table-data-3">{row.itemQuantity}</td>
+                        <td>£{row.pricePerWeek}</td>
+                        <td className="wh-table-data-4">{row.LeaseEnd}</td>
+                        <td className="wh-table-data-5"><div className={statusElement(row.status)}>{row.status}</div></td>
+                        <td className="wh-table-data-6">{row.location}</td>
+                        <td className="wh-table-data-7">
+                            <Link to={{
+                                pathname: '/renting',
+                                state: {
+                                    rentingData: row
+                                }
+                            }}>
+                                <div className="wh-table-link-btn">
+                                    <i className="fas fa-external-link-square-alt"></i>
+                                </div>
+                            </Link>
+                        </td>
+                    </tr>
+                )
+            }
+            return (
+                <tr key={row.orderId} className="wh-table-data">
+                    <td className="wh-table-data-1">{row.orderId}</td>
+                    <td className="wh-table-data-2">{row.client}</td>
+                    <td className="wh-table-data-3">{row.itemQuantity}</td>
+                    <td>£{row.pricePerWeek}</td>
+                    <td className="wh-table-data-4">{row.LeaseEnd}</td>
+                    <td className="wh-table-data-5"><div className={statusElement(row.status)}>{row.status}</div></td>
+                    <td className="wh-table-data-6">{row.location}</td>
+                    <td className="wh-table-data-7">
+                        <Link to={{
+                            pathname: '/renting',
+                            state: {
+                                rentingData: row
+                            }
+                        }}>
+                            <div className="wh-table-link-btn">
+                                <i className="fas fa-external-link-square-alt"></i>
+                            </div>
+                        </Link>
+                    </td>
+                </tr>
+            )
+        });
 
         return (
             <div className="wh-table-section">

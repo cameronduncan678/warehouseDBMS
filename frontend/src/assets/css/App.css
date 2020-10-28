@@ -1,5 +1,6 @@
 [type="radio"]:not(:checked),[type="radio"]:checked{position:static !important;opacity:1 !important;pointer-events:auto !important}
-.wh-AddData-modal{position:absolute;top:200px;left:20%;right:20%;bottom:400px;background:#ff7d1c;border:none !important}
+.wh-AddData-modal{position:absolute;top:200px;left:20%;right:20%;bottom:400px;background:#ff7d1c;border:none !important;border-radius:10px}
+.wh-newTargets-modal{position:absolute;top:200px;left:20%;right:20%;bottom:400px;background:#ff7d1c;border:none !important;border-radius:10px}
 .wh-modal-Overlay{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(4,112,103,0.5)}
 .wh-dashboard-container{width:80%;margin:0 auto}.row{margin-bottom:0 !important}.wh-stats1{width:100%;background:#ff7d1c;border-radius:5px}
 .wh-stats1-col{height:300px}.wh-status-title{font-size:20px;font-weight:bold;color:#047067}
@@ -58,7 +59,7 @@
 .wh-data-submit-btn{height:100%;width:40%;border-radius:50px;background:#ff7d1c;color:#047067;font-size:20px;font-weight:bold}
 .wh-data-submit-btn:hover{background:#047067;border:solid 3px #ff7d1c;color:#ff7d1c}
 .wh-dataitem-body-del{background:#047067;color:#ff7d1c}.wh-dataitem-body-del:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
-@media screen and (max-width:992px){.wh-datapacket{margin-top:30px}}.wh-locations{width:90%;margin:0 auto}
+@media screen and (max-width:992px){.wh-datapacket{margin-top:30px}}.wh-locations{width:90%;margin:0 auto;margin-top:20px}
 .wh-locations-nav{width:95%;margin-top:30px;height:700px;background:#ff7d1c;margin:0 auto;border-radius:10px;padding-top:20px;overflow-y:scroll;text-transform:capitalize;cursor:pointer}
 .wh-location-nav-link{width:90%;margin:0 auto;height:70px;background:#047067;border-radius:10px;margin-bottom:20px;color:#ff7d1c;font-size:30px;padding-top:10px;padding-left:10px}
 .wh-location-nav-link span{padding-left:10px;font-weight:bold}.wh-locations-wdgts{width:95%;margin-top:30px;height:700px;margin:0 auto;border-radius:10px;overflow-y:scroll}
@@ -71,12 +72,20 @@
 .wh-locations-wdgts-stats-ul{width:100%;border:solid 3px #047067;height:3px;border-radius:50px}
 .wh-locations-targets{height:200px;border:solid 3px #047067;border-radius:10px}.wh-locations-targets-title{height:40px;background:#047067;color:#ff7d1c;font-size:20px;font-weight:bold;padding-left:10px}
 .wh-locations-targets-targets{height:30px;font-size:30px;color:#047067;font-weight:bold;margin-left:10px}
-.wh-locations-targets-projections{height:50px;font-size:25px;margin-left:10px;margin-top:15px;background:#047067;padding-top:5px;border-radius:10px;width:90%;color:#ff7d1c;padding-left:5px;font-weight:bold}
-.wh-projection-red{color:red}.wh-projection-green{color:lightgreen}.wh-locations-targets-new{height:40px;background:#047067;width:30%;font-size:20px;text-align:center;margin-top:10px;margin-left:10px;border-radius:50px;color:#ff7d1c;font-weight:bold;padding-top:2px}
+.wh-locations-targets-projections{height:50px;font-size:25px;margin-left:10px;margin-top:15px;background:#ff7d1c;padding-top:5px;border-radius:10px;width:90%;color:#047067;padding-left:5px;font-weight:bold}
+.wh-projection-red{color:red}.wh-projection-green{color:lightgreen}.wh-locations-targets-new{height:40px;background:#047067;width:30%;font-size:20px;text-align:center;margin-top:10px;margin-left:10px;border-radius:50px;color:#ff7d1c;font-weight:bold;padding-top:2px;cursor:pointer}
+.wh-locations-targets-new:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
 .wh-locations-status{margin-top:10px;background:#047067;border-radius:5px}.wh-locations-status-title{height:40px;color:#ff7d1c;font-size:20px;font-weight:bold;padding-left:10px}
 .wh-locations-status-title span{margin-left:20px;color:lightgreen}.wh-locations-status-statuses{font-size:20px;margin-left:10px}
 .wh-locations-status-statuses span{margin-left:10px}.wh-locations-status-store{color:lightgreen}
 .wh-locations-status-warn{color:orange}.wh-locations-status-over{color:red}.wh-locations-status-bar{height:100px}
+.wh-newTargets-section{padding:20px}.wh-newTargets-input{width:100%;float:left;height:100px;background:#047067;border-radius:10px}
+.wh-newTargets-row{margin-top:20px}.wh-newTargets-input-text{float:left;width:50%;font-size:25px;font-weight:bold;text-align:center;padding-top:25px;color:#ff7d1c}
+.wh-newTargets-input-input{float:left;width:45%;background:#d1dfda;margin-top:20px;border-radius:5px}
+.wh-newTargets-btns{margin-top:20px;width:100%}.wh-newTargets-btns-btn{width:50%;height:50px;background:#047067;border-radius:50px;color:#ff7d1c;font-size:25px;text-align:center;font-weight:bold;padding-top:5px;cursor:pointer}
+.wh-newTargets-btns-cancel{width:50%;height:50px;background:red;border-radius:50px;color:#047067;font-size:25px;text-align:center;font-weight:bold;padding-top:5px;cursor:pointer;border:solid 3px #047067}
+.wh-newTargets-btns-btn:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
+.wh-newTargets-btns-cancel:hover{background:#ff7d1c;color:red;border:solid 3px red}
 @media screen and (max-width:600px){.wh-locations-wdgt-dash{height:1000px}#locationNav{display:none}
 }.wh-newData{width:20%}.wh-newData-btn{width:100%;height:50px;border-radius:50px;font-size:20px;font-weight:bold;background:#ff7d1c;color:#047067}
 .wh-newData-btn:hover{background:#047067;color:#ff7d1c;border:solid 3px #ff7d1c}.wh-newData-back{background:#ff7d1c;color:#047067;width:40%;height:50px;border-radius:50px;font-size:20px;font-weight:bold}
@@ -107,6 +116,7 @@
 .wh-table-header-5{width:200px;background:#ff7d1c}.wh-table-header-6{width:250px;background:#ff7d1c}
 .wh-table-header-7{width:150px;background:#ff7d1c}.wh-table-header-price{width:150px;background:#ff7d1c}
 .wh-table-data{background:white}.wh-table-data:nth-child(even){background:#d1dfda}
+.wh-table-vacant{background:repeating-linear-gradient(45deg,#d1dfda,#d1dfda 10px,#b5c0bc 10px,#b5c0bc 15px);color:black}
 .wh-table-data-6{text-transform:capitalize}.wh-table-status-ok{background:green;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px;text-transform:capitalize}
 .wh-table-status-warning{background:orange;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px;text-transform:capitalize}
 .wh-table-status-over{background:red;text-align:center;color:white;font-weight:bold;width:70%;border-radius:50px;padding:5px;text-transform:capitalize}

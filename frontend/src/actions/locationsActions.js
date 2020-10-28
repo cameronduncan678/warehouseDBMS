@@ -11,3 +11,7 @@ export const fetchLocations = () => dispatch => {
             })
         })
 }
+
+export const updateLocationTargets = (targetObj) => dispatch => {
+    console.log(targetObj);
+}

@@ -3,6 +3,7 @@
 .wh-locations{
     width: 90%;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .wh-locations-nav{
@@ -136,11 +137,11 @@
     font-size: 25px;
     margin-left: 10px;
     margin-top: 15px;
-    background: $mainGreen;
+    background: $mainOrange;
     padding-top: 5px;
     border-radius: 10px;
     width: 90%;
-    color: $mainOrange;
+    color: $mainGreen;
     padding-left: 5px;
     font-weight: bold;
 }
@@ -165,6 +166,13 @@
     color: $mainOrange;
     font-weight: bold;
     padding-top: 2px;
+    cursor: pointer;
+}
+
+.wh-locations-targets-new:hover{
+    background: $mainOrange;
+    color: $mainGreen;
+    border: solid 3px $mainGreen;
 }
 
 .wh-locations-status{
@@ -210,6 +218,86 @@
 
 .wh-locations-status-bar{
     height: 100px;
+}
+
+.wh-newTargets-section{
+    padding: 20px;
+}
+
+.wh-newTargets-input{
+    width: 100%;
+    float: left;
+    height: 100px;
+    background: $mainGreen;
+    border-radius: 10px;
+}
+
+.wh-newTargets-row{
+    margin-top: 20px;
+}
+
+.wh-newTargets-input-text{
+    float: left;
+    width: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
+    color: $mainOrange;
+    
+}
+
+.wh-newTargets-input-input{
+    float: left;
+    width: 45%;
+    background: $accentGreen;
+    margin-top: 20px;
+    border-radius: 5px;
+    
+}
+
+.wh-newTargets-btns{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.wh-newTargets-btns-btn{
+    width: 50%;
+    height: 50px;
+    background: $mainGreen;
+    border-radius: 50px;
+    color: $mainOrange;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.wh-newTargets-btns-cancel{
+    width: 50%;
+    height: 50px;
+    background: red;
+    border-radius: 50px;
+    color: $mainGreen;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    cursor: pointer;
+    border: solid 3px $mainGreen;
+}
+
+.wh-newTargets-btns-btn:hover{
+    background: $mainOrange;
+    color: $mainGreen;
+    border: solid 3px $mainGreen;
+}
+
+.wh-newTargets-btns-cancel:hover{
+    background: $mainOrange;
+    color: red;
+    border: solid 3px red;
 }
 
 @media screen and (max-width: 600px){

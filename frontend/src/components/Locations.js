@@ -1,11 +1,60 @@
 import React from 'react';
-import { fetchLocations } from '../actions/locationsActions';
+import { fetchLocations, updateLocationTargets } from '../actions/locationsActions';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
 class Locations extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            locationId: '',
+            percTarget: 0,
+            slotTarget: 0,
+            spaceTarget: 0,
+            incomeTarget: 0,
+            showModal: false
+        }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
 
     componentDidMount() {
         this.props.fetchLocations()
+    }
+
+    newTargets(index) {
+        var locationId = this.props.localLocations[index].locationId;
+        var targetObj = this.props.localLocations[index].targets;
+        this.setState({
+            locationId: locationId,
+            percTarget: targetObj.perc,
+            slotTarget: targetObj.slots,
+            spaceTarget: targetObj.spaces,
+            incomeTarget: targetObj.income,
+            showModal: true
+        })
+    }
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+    onSubmit() {
+        var targetsObj = {
+            locationId: this.state.locationId,
+            percTarget: parseInt(this.state.percTarget),
+            slotTarget: parseInt(this.state.slotTarget),
+            spaceTarget: parseInt(this.state.spaceTarget),
+            incomeTarget: parseInt(this.state.incomeTarget),
+        }
+        this.props.updateLocationTargets(targetsObj);
+        this.closeModal();
+    }
+
+    closeModal() {
+        this.setState({
+            showModal: false
+        })
     }
 
     render() {
@@ -26,7 +75,7 @@ class Locations extends React.Component {
             }
         }
 
-        const locationDash = this.props.localLocations.map(warehouse => (
+        const locationDash = this.props.localLocations.map((warehouse, index) => (
             <div key={warehouse.location} className="wh-locations-wdgt-dash">
                 <div className="wh-locations-wdgts-title">
                     <div className="col s6 wh-locations-wdgts-title-title">
@@ -57,7 +106,7 @@ class Locations extends React.Component {
                             <div className="wh-locations-targets-projections">
                                 Next Month Projections: <span className={projectionCheck(warehouse)}>£{warehouse.projection}</span>
                             </div>
-                            <div className="wh-locations-targets-new">
+                            <div className="wh-locations-targets-new" onClick={() => this.newTargets(index)}>
                                 New Targets
                             </div>
                         </div>
@@ -92,6 +141,55 @@ class Locations extends React.Component {
                         </div>
                     </div>
                 </section>
+                <Modal className="wh-newTargets-modal" isOpen={this.state.showModal} overlayClassName="wh-modal-Overlay">
+                    <section className="wh-newTargets-section section">
+                        <div className="row wh-newTargets-row">
+                            <div className="col s6">
+                                <div className="wh-newTargets-input">
+                                    <span className="wh-newTargets-input-text">Target %</span>
+                                    <span className="wh-newTargets-input-input">
+                                        <input type="text" name="percTarget" onChange={this.onChange} value={this.state.percTarget}></input>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col s6">
+                                <div className="wh-newTargets-input">
+                                    <span className="wh-newTargets-input-text">Target Slots</span>
+                                    <span className="wh-newTargets-input-input">
+                                        <input type="text" name="slotTarget" onChange={this.onChange} value={this.state.slotTarget}></input>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row wh-newTargets-row">
+                            <div className="col s6">
+                                <div className="wh-newTargets-input">
+                                    <span className="wh-newTargets-input-text">Target Spaces</span>
+                                    <span className="wh-newTargets-input-input">
+                                        <input type="text" name="spaceTarget" onChange={this.onChange} value={this.state.spaceTarget}></input>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col s6">
+                                <div className="wh-newTargets-input">
+                                    <span className="wh-newTargets-input-text">Target Income</span>
+                                    <span className="wh-newTargets-input-input">
+                                        <input type="text" name="incomeTarget" onChange={this.onChange} value={this.state.incomeTarget}></input>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col s6 wh-newTargets-btns">
+                                <div className="wh-newTargets-btns-cancel" onClick={() => this.closeModal()}>Cancel</div>
+                            </div>
+                            <div className="col s6 wh-newTargets-btns">
+                                <div className="wh-newTargets-btns-btn" onClick={this.onSubmit}>Commit</div>
+                            </div>
+                        </div>
+
+                    </section>
+                </Modal>
             </div>
         )
     }
@@ -101,4 +199,4 @@ const mapStateToProps = state => ({
     localLocations: state.locations.data
 })
 
-export default connect(mapStateToProps, { fetchLocations })(Locations);
+export default connect(mapStateToProps, { fetchLocations, updateLocationTargets })(Locations);

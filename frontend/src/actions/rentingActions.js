@@ -9,14 +9,14 @@ function getItemsforRental(dataArr) {
         var object = {
             orderId: data.orderId,
             client: data.client,
-            itemsId: data.itemId,
+            itemsId: data.itemsId,
             itemQuantity: data.itemQuantity,
             spaces: data.spaces,
             slots: data.slots,
             pricePerWeek: data.pricePerWeek,
             LeaseEnd: data.LeaseEnd,
             status: data.status,
-            location: data.loacation,
+            location: data.location,
             items: [
                 {
                     itemName: "Highschool PCs",
