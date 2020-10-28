@@ -10,7 +10,6 @@ import store from './store';
 import Header from './components/Header';
 import Dashboard from './components/Dasboard';
 import Database from './components/Database';
-import Items from './components/Items';
 import Locations from './components/Locations';
 
 class App extends Component {
@@ -23,7 +22,6 @@ class App extends Component {
             <Switch>
               <Route path="/" exact component={Dashboard} />
               <Route path="/database" component={Database} />
-              <Route path="/items" component={Items} />
               <Route path="/locations" component={Locations} />
             </Switch>
           </Router >

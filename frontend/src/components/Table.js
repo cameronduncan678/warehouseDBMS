@@ -1,9 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { fetchItems } from '../actions/itemActions';
-import { connect } from 'react-redux';
 
 class Table extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            orderId: "",
+            client: "",
+            itemsId: "",
+            itemQuantity: 0,
+            spaces: 0,
+            slots: 0,
+            pricePerWeek: 0,
+            LeaseEnd: "",
+            status: "",
+            location: "",
+            items: []
+        }
+    }
+
+    async editData(index) {
+        var editData = this.props.data[index];
+
+        this.setState({
+            orderId: editData.orderId,
+            client: editData.client,
+            itemsId: editData.itemsId,
+            itemQuantity: editData.itemQuantity,
+            spaces: editData.spaces,
+            slots: editData.slots,
+            pricePerWeek: editData.pricePerWeek,
+            LeaseEnd: editData.LeaseEnd,
+            status: editData.status,
+            location: editData.location,
+            items: editData.items
+        })
+
+
+    }
+
     render() {
 
         const statusElement = (status) => {
@@ -21,7 +55,7 @@ class Table extends React.Component {
             }
         }
 
-        const dataItems = this.props.data.map(row => (
+        const dataItems = this.props.data.map((row, index) => (
             <tr key={row.orderId} className="wh-table-data">
                 <td className="wh-table-data-1">{row.orderId}</td>
                 <td className="wh-table-data-2">{row.client}</td>
@@ -31,16 +65,9 @@ class Table extends React.Component {
                 <td className="wh-table-data-5"><div className={statusElement(row.status)}>{row.status}</div></td>
                 <td className="wh-table-data-6">{row.location}</td>
                 <td className="wh-table-data-7">
-                    <Link to={{
-                        pathname: "/items",
-                        state: {
-                            itemsId: row.itemsId
-                        }
-                    }} >
-                        <div className="wh-table-link-btn">
-                            <i className="fas fa-external-link-square-alt"></i>
-                        </div>
-                    </Link>
+                    <div className="wh-table-link-btn" onClick={() => this.editData(index)}>
+                        <i className="fas fa-external-link-square-alt"></i>
+                    </div>
                 </td>
             </tr>
         ));
@@ -69,4 +96,5 @@ class Table extends React.Component {
     }
 }
 
-export default connect(null, { fetchItems })(Table);
+
+export default Table;

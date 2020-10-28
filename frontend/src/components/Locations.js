@@ -8,8 +8,6 @@ class Locations extends React.Component {
         this.props.fetchLocations()
     }
 
-
-
     render() {
 
         const locationNavs = this.props.localLocations.map(warehouse => (

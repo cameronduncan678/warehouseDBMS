@@ -2,13 +2,49 @@ import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING, ITEM_RENTING } from './type
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
+
+function getItemsforRental(dataArr) {
+    var newData = []
+    dataArr.forEach(data => {
+        var object = {
+            orderId: data.orderId,
+            client: data.client,
+            itemsId: data.itemId,
+            itemQuantity: data.itemQuantity,
+            spaces: data.spaces,
+            slots: data.slots,
+            pricePerWeek: data.pricePerWeek,
+            LeaseEnd: data.LeaseEnd,
+            status: data.status,
+            location: data.loacation,
+            items: [
+                {
+                    itemName: "Highschool PCs",
+                    itemQuantity: 6
+                },
+                {
+                    itemName: "Office PCs",
+                    itemQuantity: 4
+                },
+                {
+                    itemName: "Retail PCs",
+                    itemQuantity: 3
+                }
+            ]
+        }
+
+        newData.push(object);
+    })
+    return newData;
+}
+
 export const fetchRenting = () => dispatch => {
     axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
             dispatch({
                 type: FETCH_RENTING,
-                payload: packet.data.rentals
+                payload: getItemsforRental(packet.data.rentals)
             })
         })
 };
