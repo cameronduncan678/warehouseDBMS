@@ -18,7 +18,7 @@ class Items extends React.Component {
 
     generateTotal() {
         var Total = 0;
-        this.props.items.map(item => {
+        this.props.items.forEach(item => {
             Total += this.generatePrices(item.itemQuantity);
         });
         return Total;

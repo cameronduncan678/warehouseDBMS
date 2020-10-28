@@ -85,6 +85,7 @@ class Locations extends React.Component {
                         <div className="">Total per/Month: £{warehouse.incomePerWeek}</div>
                     </div>
                 </div>
+
                 <div className="col s12 m6">
                     <div className="wh-locations-wdgts-stats">
                         <div className="wh-locations-wdgts-stats-title">

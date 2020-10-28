@@ -146,7 +146,6 @@ class NewData extends React.Component {
         const locationWdgts = this.props.localLocations.map((item) => (
             <div key={item.location} className="wh-data-location-item">
                 <span>{item.location}</span>
-                {/* <button className="btn"></button> */}
                 <input className="browser-default" name="location" type="radio" onChange={this.onChange} value={item.location}></input>
             </div>
         ));
