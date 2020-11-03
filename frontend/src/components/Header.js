@@ -37,6 +37,9 @@ class Header extends React.Component {
                         <Link to="/locations">
                             <div className="wh-header-item">Locations</div>
                         </Link>
+                        <Link to="/reports">
+                            <div className="wh-header-item">Reports</div>
+                        </Link>
                         <div className="wh-header-user">John Smith</div>
                         <div className="wh-header-logout">
                             <button className="btn">Log Out</button>

@@ -50,7 +50,7 @@
     height: 500px;
     background: $mainOrange;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-radius: 10px;
 }
 
@@ -107,6 +107,22 @@
     border: solid 3px $mainGreen;
     height: 3px;
     border-radius: 50px;
+}
+
+.wh-locations-graphs{
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+.wh-locations-graphs-canvas{
+    margin-top: 20px;
+}
+
+.wh-locations-graphs-keys{
+    font-size: 20px;
+    font-weight: bold;
+    color: $mainGreen;
+    text-align: center;
 }
 
 .wh-locations-targets{
@@ -218,6 +234,9 @@
 
 .wh-locations-status-bar{
     height: 100px;
+}
+
+.wh-locations-status-bar svg{
 }
 
 .wh-newTargets-section{

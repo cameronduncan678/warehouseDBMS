@@ -1,7 +1,69 @@
 @import '../import/colors.scss';
 
 .wh-graphCard {
-  height: 300px;
+  height: 630px;
   background: $accentGreen;
   border-radius: 5px;
+  width: 95%;
+  padding-top: 30px;
+  
+}
+
+.wh-graphcard-graph{
+  width: 90%;
+  height: 550px;
+  margin: auto;
+  border-radius: 5px;
+  overflow-y: scroll;
+  
+}
+
+.wh-graphcard-graphcard{
+  width: 90%;
+  background: $accentDarkGreen;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.wh-graphcard-graphcard svg{
+  margin-top: 20px;
+}
+
+.wh-graphcard-graphcard-stats{
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.wh-graphcard-graphcard-loc{
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: $mainOrange;
+}
+
+.wh-graphcard-graphcard-totals{
+  font-size: 18px;
+  margin-top: 25px;
+  color: $mainGreen;
+  font-weight: bold;
+}
+
+.rem{
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 50px;
+  background: $mainGreen;
+  color: $mainOrange;
+}
+
+.use{
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 50px;
+  background: $mainOrange;
+  color: $mainGreen;
 }

@@ -10,6 +10,32 @@
   height: 300px;
 }
 
+.wh-stats1-title{
+  height: 60px;
+  background: $mainGreen;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 20px;
+  color: $mainOrange;
+  font-weight: bold;
+}
+
+.wh-stats1-date{
+  height: 40px;
+  border-bottom: solid 5px $mainGreen;
+  padding-left: 20px;
+  padding-top: 2px;
+  font-weight: bold;
+  color: $mainGreen;
+  font-size: 20px;
+}
+
+.wh-stats1-summary{
+  padding: 20px;
+  color: $mainGreen;
+  font-size: 15px;
+}
+
 .wh-status-title{
   font-size: 20px;
   font-weight: bold;

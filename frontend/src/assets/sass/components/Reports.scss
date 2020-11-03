@@ -105,3 +105,52 @@
     margin: 0 auto;
     border-radius: 10px;
 }
+
+.wh-reportField-title{
+    height: 150px;
+    border-bottom: solid 10px $mainOrange;
+    font-size: 40px;
+    padding-top: 50px;
+    padding-left: 30px;
+    font-weight: bold;
+    color: $mainOrange
+}
+
+.wh-reportField-summary{
+    height: 350px;
+    border-bottom: solid 10px $mainOrange;
+    padding: 30px;
+    font-size: 18px;
+    color: $mainOrange;
+}
+
+.wh-reportField-links{
+    height: 150px;
+    background: $mainOrange;
+    margin-top: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.wh-reportField-links-file{
+    height: 100px;
+    width: 100px;
+    background: $mainGreen;
+    border-radius: 10px;
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: $mainOrange;
+}
+
+.wh-reportField-links-file:hover{
+    background: $mainOrange;
+    border: solid 3px $mainGreen;
+    color: $mainGreen;
+}
+
+.wh-reportField-links-file i{ 
+    font-size: 60px;
+    padding: 20px;
+}

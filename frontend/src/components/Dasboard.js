@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/locationsActions';
 
+
 //Components
-import GraphCard from './GraphCard';
+import Graph from './Graph';
 import DashStats1 from './DashStats1';
 import DashStats2 from './DashStats2';
 
@@ -20,19 +21,8 @@ class Dashboard extends React.Component {
                     <div className="row">
                         <div className="col s12 l6">
                             <div className="row section">
-                                <div className="col s6">
-                                    <GraphCard />
-                                </div>
-                                <div className="col s6">
-                                    <GraphCard />
-                                </div>
-                            </div>
-                            <div className="row section">
-                                <div className="col s6">
-                                    <GraphCard />
-                                </div>
-                                <div className="col s6">
-                                    <GraphCard />
+                                <div className="">
+                                    <Graph data={this.props.localLocations} />
                                 </div>
                             </div>
                         </div>
@@ -57,7 +47,7 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    localLocations: state.locations.data
+    localLocations: state.locations.data,
 })
 
 export default connect(mapStateToProps, { fetchLocations })(Dashboard);
