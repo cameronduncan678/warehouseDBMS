@@ -2,49 +2,16 @@ import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING, ITEM_RENTING } from './type
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
-
-function getItemsforRental(dataArr) {
-    var newData = []
-    dataArr.forEach(data => {
-        var object = {
-            orderId: data.orderId,
-            client: data.client,
-            itemsId: data.itemsId,
-            itemQuantity: data.itemQuantity,
-            spaces: data.spaces,
-            slots: data.slots,
-            pricePerWeek: data.pricePerWeek,
-            LeaseEnd: data.LeaseEnd,
-            status: data.status,
-            location: data.location,
-            items: [
-                {
-                    itemName: "Highschool PCs",
-                    itemQuantity: 6
-                },
-                {
-                    itemName: "Office PCs",
-                    itemQuantity: 4
-                },
-                {
-                    itemName: "Retail PCs",
-                    itemQuantity: 3
-                }
-            ]
-        }
-
-        newData.push(object);
-    })
-    return newData;
-}
+var dummy = 'https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json';
+var localhost = 'http://localhost:5555/renting';
 
 export const fetchRenting = () => dispatch => {
-    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
+    axios.get(localhost,
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
             dispatch({
                 type: FETCH_RENTING,
-                payload: getItemsforRental(packet.data.rentals)
+                payload: packet.data
             })
         })
 };
@@ -78,11 +45,11 @@ export const addRenting = (newData) => dispatch => {
 }
 
 export const filterRenting = (filterObj) => dispatch => {
-    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
+    axios.get(localhost,
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
 
-            var filterArr = packet.data.rentals;
+            var filterArr = packet.data;
 
             if (filterObj.orderId) {
                 filterArr.forEach(data => {
@@ -125,7 +92,7 @@ export const itemRenting = (itemId) => dispatch => {
     axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
-            var filterArr = packet.data.rentals;
+            var filterArr = packet.data;
             var renting = [];
             if (itemId) {
                 filterArr.forEach(item => {

@@ -12,3 +12,4 @@ export const FETCH_LOCATIONS = 'FETCH_LOCATIONS';
 
 //reports data types
 export const FETCH_REPORTS = 'FETCH_REPORTS';
+export const LATEST_REPORT = 'LATEST_REPORT';

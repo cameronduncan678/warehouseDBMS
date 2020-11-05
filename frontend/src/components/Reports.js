@@ -29,31 +29,31 @@ class Reports extends React.Component {
 
         switch (extension) {
             case 'pdf':
-                return (<i class="fas fa-file-pdf"></i>);
+                return (<i className="fas fa-file-pdf"></i>);
             case 'jpg':
-                return (<i class="fas fa-file-image"></i>);
+                return (<i className="fas fa-file-image"></i>);
             case 'png':
-                return (<i class="fas fa-file-image"></i>);
+                return (<i className="fas fa-file-image"></i>);
             case 'tiff':
-                return (<i class="fas fa-file-image"></i>);
+                return (<i className="fas fa-file-image"></i>);
             case 'bmp':
-                return (<i class="fas fa-file-image"></i>);
+                return (<i className="fas fa-file-image"></i>);
             case 'txt':
-                return (<i class="fas fa-file-word"></i>);
+                return (<i className="fas fa-file-word"></i>);
             case 'docx':
-                return (<i class="fas fa-file-word"></i>);
+                return (<i className="fas fa-file-word"></i>);
             case 'html':
-                return (<i class="fas fa-file-code"></i>);
+                return (<i className="fas fa-file-code"></i>);
             case 'py':
-                return (<i class="fas fa-file-code"></i>);
+                return (<i className="fas fa-file-code"></i>);
             case 'js':
-                return (<i class="fas fa-file-code"></i>);
+                return (<i className="fas fa-file-code"></i>);
             case 'json':
-                return (<i class="fas fa-file-code"></i>);
+                return (<i className="fas fa-file-code"></i>);
             case 'xml':
-                return (<i class="fas fa-file-code"></i>);
+                return (<i className="fas fa-file-code"></i>);
             default:
-                return (<i class="fas fa-file-alt"></i>);
+                return (<i className="fas fa-file-alt"></i>);
         }
     }
 
@@ -70,7 +70,7 @@ class Reports extends React.Component {
         ))
 
         const linkWdgts = this.state.reportLinks.map(link => (
-            <a target='_blank' href={link} className="wh-reportField-links-file">
+            <a target='_blank' href={link} rel="noopener noreferrer" className="wh-reportField-links-file">
                 {this.fileExtension(link)}
             </a>
         ))

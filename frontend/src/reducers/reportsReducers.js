@@ -1,7 +1,8 @@
-import { FETCH_REPORTS } from '../actions/types';
+import { FETCH_REPORTS, LATEST_REPORT } from '../actions/types';
 
 const initailState = {
-    data: []
+    data: [],
+    dat: {}
 };
 
 export default function (state = initailState, action) {
@@ -9,8 +10,19 @@ export default function (state = initailState, action) {
         case FETCH_REPORTS:
             return {
                 ...state,
-                data: action.payload
+                data: action.payload,
+                dat: {
+                    reportTitle: '',
+                    reportDate: '',
+                    reportAuthor: '',
+                    reportText: ''
+                }
             };
+        case LATEST_REPORT:
+            return {
+                ...state,
+                dat: action.payload
+            }
         default:
             return state;
     };

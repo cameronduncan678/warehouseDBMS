@@ -134,13 +134,13 @@
     padding: 0;
     padding-right: 20px;
     padding-top: 10px;
-    color: $mainGreen;
+    color: $mainGreen !important;
     background: $mainOrange;
   }
 
   .wh-header-item:hover {
     background: $mainGreen;
-    color: $mainOrange;
+    color: $mainOrange !important;
   }
 
   .wh-header-logout {

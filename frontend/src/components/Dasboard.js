@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/locationsActions';
+import { fetchLatestReports } from '../actions/reportsActions';
 
 
 //Components
@@ -12,6 +13,7 @@ class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.fetchLocations();
+        this.props.fetchLatestReports();
     }
 
     render() {
@@ -27,13 +29,13 @@ class Dashboard extends React.Component {
                             </div>
                         </div>
                         <div className="col s12 l6">
-                            <div className="row section">
-                                <div className="col s12">
-                                    <DashStats1 />
+                            <div className="section">
+                                <div className="">
+                                    <DashStats1 report={this.props.localReports} />
                                 </div>
                             </div>
-                            <div className="row section">
-                                <div className="col s12">
+                            <div className="section">
+                                <div className="">
                                     <DashStats2 locations={this.props.localLocations} />
                                 </div>
                             </div>
@@ -48,6 +50,7 @@ class Dashboard extends React.Component {
 
 const mapStateToProps = state => ({
     localLocations: state.locations.data,
+    localReports: state.reports.dat
 })
 
-export default connect(mapStateToProps, { fetchLocations })(Dashboard);
+export default connect(mapStateToProps, { fetchLocations, fetchLatestReports })(Dashboard);
