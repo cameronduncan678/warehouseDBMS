@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace warehousedbms.Controllers
 {
     [EnableCors("MyPolicy")]
     [Route("renting")]
-    public class RentingController : Controller
+    public class RentingController : ControllerBase
     {
         private readonly DataContext _dataContext;
 
@@ -21,7 +22,7 @@ namespace warehousedbms.Controllers
         }
 
         [HttpGet("")]
-        public IActionResult GetRenting()
+        public IEnumerable GetRenting()
         {
             var renting = _dataContext.Renting.ToList();
             var items = _dataContext.Items.ToList();
@@ -49,7 +50,7 @@ namespace warehousedbms.Controllers
                 procesedData.Add(data);
             }
 
-            return Json(procesedData);
+            return procesedData;
         }
     }
 }

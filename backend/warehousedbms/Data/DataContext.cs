@@ -16,6 +16,10 @@ namespace warehousedbms.Data
 
         public DbSet<Renting> Renting { get; set; }
         public DbSet<Items> Items { get; set; }
+        
+        public DbSet<Locations> Locations { get; set; }
+        
+        public DbSet<Targets> Targets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
