@@ -23,11 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ffe3c86-fab9-4ce1-bd98-b43f8c6cbf43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/RentingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RentingController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../design/projection_service/Dates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/LocationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LocationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Locations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Location.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
     </list>
@@ -43,11 +47,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Controllers/RentingController.cs" />
+        <option value="$PROJECT_DIR$/Models/LocationWithTargets.cs" />
         <option value="$PROJECT_DIR$/Models/Locations.cs" />
         <option value="$PROJECT_DIR$/Models/Targets.cs" />
-        <option value="$PROJECT_DIR$/Models/LocationWithTargets.cs" />
+        <option value="$PROJECT_DIR$/Models/Location.cs" />
         <option value="$PROJECT_DIR$/Data/DataContext.cs" />
         <option value="$PROJECT_DIR$/Controllers/LocationController.cs" />
+        <option value="$PROJECT_DIR$/Services/ProjectionService.cs" />
       </list>
     </option>
   </component>
@@ -107,7 +113,10 @@
       <updated>1605037780946</updated>
       <workItem from="1605037787492" duration="136000" />
       <workItem from="1605373800121" duration="784000" />
-      <workItem from="1605617119367" duration="1127000" />
+      <workItem from="1605617119367" duration="4258000" />
+      <workItem from="1605641834290" duration="623000" />
+      <workItem from="1605703153159" duration="4485000" />
+      <workItem from="1605808312829" duration="1396000" />
     </task>
     <servers />
   </component>

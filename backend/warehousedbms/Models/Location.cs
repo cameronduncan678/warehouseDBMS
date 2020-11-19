@@ -1,6 +1,6 @@
 ﻿namespace warehousedbms.Models
 {
-    public class Locations
+    public class Location
     {
         public int id { get; set; }
         public string locationId { get; set; }
