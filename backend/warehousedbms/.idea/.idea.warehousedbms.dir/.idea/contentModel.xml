@@ -11,6 +11,7 @@
         <e p="ItemsController.cs" t="Include" />
         <e p="LocationController.cs" t="Include" />
         <e p="RentingController.cs" t="Include" />
+        <e p="ReportsController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="DataContext.cs" t="Include" />
@@ -21,6 +22,9 @@
         <e p="LocationWithTargets.cs" t="Include" />
         <e p="Renting.cs" t="Include" />
         <e p="RentingWithItems.cs" t="Include" />
+        <e p="ReportLinks.cs" t="Include" />
+        <e p="Reports.cs" t="Include" />
+        <e p="ReportWithReportLink.cs" t="Include" />
         <e p="Targets.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
@@ -42,6 +46,7 @@
       <e p="Utils" t="Include">
         <e p="LocationUtils.cs" t="Include" />
         <e p="RentingUtils.cs" t="Include" />
+        <e p="ReportsUtils.cs" t="Include" />
       </e>
       <e p="warehousedbms.csproj" t="IncludeRecursive" />
     </e>

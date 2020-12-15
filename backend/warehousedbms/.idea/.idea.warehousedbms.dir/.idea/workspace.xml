@@ -25,14 +25,14 @@
     <list default="true" id="3ffe3c86-fab9-4ce1-bd98-b43f8c6cbf43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/LocationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LocationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/RentingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RentingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Items.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Reports.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Reports.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/debug.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +52,18 @@
         <option value="$PROJECT_DIR$/Models/Locations.cs" />
         <option value="$PROJECT_DIR$/Models/Targets.cs" />
         <option value="$PROJECT_DIR$/Models/Location.cs" />
-        <option value="$PROJECT_DIR$/Data/DataContext.cs" />
         <option value="$PROJECT_DIR$/Services/ProjectionService.cs" />
         <option value="$PROJECT_DIR$/Controllers/RentingController.cs" />
         <option value="$PROJECT_DIR$/Utils/RentingUtils.cs" />
         <option value="$PROJECT_DIR$/Models/Items.cs" />
         <option value="$PROJECT_DIR$/Controllers/LocationController.cs" />
         <option value="$PROJECT_DIR$/Utils/LocationUtils.cs" />
+        <option value="$PROJECT_DIR$/Models/Reports.cs" />
+        <option value="$PROJECT_DIR$/Models/ReportLinks.cs" />
+        <option value="$PROJECT_DIR$/Data/DataContext.cs" />
+        <option value="$PROJECT_DIR$/Models/ReportWithReportLink.cs" />
+        <option value="$PROJECT_DIR$/Utils/ReportsUtils.cs" />
+        <option value="$PROJECT_DIR$/Controllers/ReportsController.cs" />
       </list>
     </option>
   </component>
@@ -125,7 +130,7 @@
       <workItem from="1605703153159" duration="4485000" />
       <workItem from="1605808312829" duration="3210000" />
       <workItem from="1607517891721" duration="2619000" />
-      <workItem from="1608059445690" duration="6510000" />
+      <workItem from="1608059445690" duration="8696000" />
     </task>
     <servers />
   </component>

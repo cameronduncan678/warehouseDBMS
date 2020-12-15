@@ -20,6 +20,10 @@ namespace warehousedbms.Data
         public DbSet<Location> Location { get; set; }
         
         public DbSet<Targets> Targets { get; set; }
+        
+        public DbSet<Reports> Reports { get; set; }
+        
+        public DbSet<ReportLinks> ReportLinks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
