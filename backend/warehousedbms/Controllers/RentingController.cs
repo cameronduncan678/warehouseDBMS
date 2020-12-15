@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using warehousedbms.Data;
 using warehousedbms.Models;
+using warehousedbms.Utils;
 
 namespace warehousedbms.Controllers
 {
@@ -32,20 +33,22 @@ namespace warehousedbms.Controllers
             foreach(Renting item in renting)
             {
                 RentingWithItems data = new RentingWithItems();
+                
+                List<Items> _items = RentingUtils.GetItems(items, item.itemsId);
 
-                IEnumerable<Items> query = items.Where(dat => dat.itemsId == item.itemsId);
+                int[] _slots_spaces = RentingUtils.GetSpacesSlots(_items);
 
                 data.orderId = item.orderId;
                 data.client = item.client;
                 data.itemsId = item.itemsId;
                 data.itemQuantity = item.itemQuantity;
-                data.spaces = item.spaces;
-                data.slots = item.slots;
-                data.pricePerWeek = item.pricePerWeek;
+                data.spaces = _slots_spaces[0];
+                data.slots = _slots_spaces[1];
+                data.pricePerWeek = RentingUtils.GetPricePerWeek(_slots_spaces[0], _slots_spaces[1]);
                 data.LeaseEnd = item.LeaseEnd;
-                data.status = item.status;
+                data.status = RentingUtils.GetStatus(item.LeaseEnd, item.status);
                 data.location = item.location;
-                data.items = query.ToList();
+                data.items = _items;
 
                 procesedData.Add(data);
             }

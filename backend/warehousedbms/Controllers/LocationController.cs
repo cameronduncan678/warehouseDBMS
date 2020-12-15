@@ -6,6 +6,7 @@ using warehousedbms.Data;
 using System.Linq;
 using warehousedbms.Models;
 using warehousedbms.Services;
+using warehousedbms.Utils;
 
 namespace warehousedbms.Controllers
 {
@@ -25,6 +26,7 @@ namespace warehousedbms.Controllers
         {
             var locations = _dbContext.Location.ToList();
             var targets = _dbContext.Targets.ToList();
+            var items = _dbContext.Items.ToList();
 
             List<LocationWithTargets> locationWithTargets = new List<LocationWithTargets>();
             
@@ -32,18 +34,20 @@ namespace warehousedbms.Controllers
 
             foreach (Location loc in locations)
             {
+                int spaces = LocationUtils.GetSpaces(items, loc.location);
                 locationWithTargets.Add(new LocationWithTargets()
                 {
                     locationId = loc.locationId,
                     location = loc.location,
                     totalSpaces = loc.totalSpaces,
-                    totalSlots = loc.totalSlots,
-                    usedSlots = loc.usedSlots,
-                    availableSpaces = loc.availableSpaces,
-                    availableSlots = loc.availableSlots,
-                    incomePerWeek = loc.incomePerWeek,
+                    totalSlots = loc.totalSpaces / 5,
+                    usedSpaces = spaces,
+                    usedSlots = spaces / 5,
+                    availableSpaces = loc.totalSpaces - spaces,
+                    availableSlots = (loc.totalSpaces - spaces) / 5,
+                    incomePerWeek = LocationUtils.GetIncome(spaces),
                     projection = projection.projectionGenerator(loc.location),
-                    targets = (from target in targets where target.locationId == loc.locationId select target).First()
+                    targets = LocationUtils.LocationTarget(targets, loc.locationId)
                 });
             }
 
