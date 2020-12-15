@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { FETCH_REPORTS, LATEST_REPORT } from './types';
 
+var dummy = 'https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/reports.json';
+var localhost = 'http://localhost:5555/reports';
+
 export const fetchReports = () => dispatch => {
-    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/reports.json',
+    axios.get(localhost,
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
             dispatch({
@@ -13,7 +16,7 @@ export const fetchReports = () => dispatch => {
 };
 
 export const fetchLatestReports = () => dispatch => {
-    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/reports.json',
+    axios.get(localhost,
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
             dispatch({

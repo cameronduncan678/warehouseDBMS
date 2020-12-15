@@ -20,7 +20,7 @@ class Reports extends React.Component {
         this.setState({
             reportTitle: this.props.localReports[index].reportTitle,
             reportSummary: this.props.localReports[index].reportText,
-            reportLinks: this.props.localReports[index].reportLinks
+            reportLinks: this.props.localReports[index].links
         })
     }
 
