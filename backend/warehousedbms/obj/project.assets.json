@@ -281,6 +281,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "Unified/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Unified.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Unified.dll": {}
+        }
       }
     }
   },
@@ -860,11 +869,26 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Unified/1.0.3": {
+      "sha512": "qKbDFGgXhXUxKBckIRuM7SrjF4apJ1qesV4H/kpht19QGEZqqFgI5bYFfOEmSWC2JEtex5CX1YWn4PsPT5awrQ==",
+      "type": "package",
+      "path": "unified/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/Unified.dll",
+        "lib/netstandard2.0/Unified.xml",
+        "unified.1.0.3.nupkg.sha512",
+        "unified.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Pomelo.EntityFrameworkCore.MySql >= 3.2.4"
+      "Pomelo.EntityFrameworkCore.MySql >= 3.2.4",
+      "Unified >= 1.0.3"
     ]
   },
   "packageFolders": {
@@ -907,6 +931,10 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[3.2.4, )"
+          },
+          "Unified": {
+            "target": "Package",
+            "version": "[1.0.3, )"
           }
         },
         "imports": [

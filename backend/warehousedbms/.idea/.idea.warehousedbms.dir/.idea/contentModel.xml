@@ -20,6 +20,9 @@
         <e p="Items.cs" t="Include" />
         <e p="Location.cs" t="Include" />
         <e p="LocationWithTargets.cs" t="Include" />
+        <e p="RawItem.cs" t="Include" />
+        <e p="RawItems.cs" t="Include" />
+        <e p="RawRenting.cs" t="Include" />
         <e p="Renting.cs" t="Include" />
         <e p="RentingWithItems.cs" t="Include" />
         <e p="ReportLinks.cs" t="Include" />

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using warehousedbms.Data;
 using warehousedbms.Models;
 using warehousedbms.Utils;
+using Unified;
 
 namespace warehousedbms.Controllers
 {
@@ -30,30 +31,73 @@ namespace warehousedbms.Controllers
 
             List<RentingWithItems> procesedData = new List<RentingWithItems>();
 
-            foreach(Renting item in renting)
+            foreach(Renting rent in renting)
             {
                 RentingWithItems data = new RentingWithItems();
                 
-                List<Items> _items = RentingUtils.GetItems(items, item.itemsId);
+                List<Items> _items = RentingUtils.GetItems(items, rent.itemsId);
 
                 int[] _slots_spaces = RentingUtils.GetSpacesSlots(_items);
 
-                data.orderId = item.orderId;
-                data.client = item.client;
-                data.itemsId = item.itemsId;
-                data.itemQuantity = item.itemQuantity;
+                data.orderId = rent.orderId;
+                data.client = rent.client;
+                data.itemsId = rent.itemsId;
+                data.itemQuantity = RentingUtils.GetItemQuantity(_items);
                 data.spaces = _slots_spaces[0];
                 data.slots = _slots_spaces[1];
                 data.pricePerWeek = RentingUtils.GetPricePerWeek(_slots_spaces[0], _slots_spaces[1]);
-                data.LeaseEnd = item.LeaseEnd;
-                data.status = RentingUtils.GetStatus(item.LeaseEnd, item.status);
-                data.location = item.location;
+                data.LeaseEnd = rent.LeaseEnd;
+                data.status = RentingUtils.GetStatus(rent.LeaseEnd, rent.status);
+                data.location = rent.location;
                 data.items = _items;
 
                 procesedData.Add(data);
             }
 
             return procesedData;
+        }
+
+        [HttpPost()]
+        public async Task<IActionResult> PostRenting([FromBody]RawRenting Data)
+        {
+            string rentingId = UnifiedId.NewId();
+            string itemId = UnifiedId.NewId();
+            
+            Renting renting = new Renting()
+            {
+                orderId = rentingId,
+                client = Data.client,
+                itemsId = itemId,
+                itemQuantity = Data.itemQuantity,
+                spaces = Data.spaces,
+                slots = Data.slots,
+                pricePerWeek = Data.pricePerWeek,
+                LeaseEnd = Data.LeaseEnd,
+                status = Data.status,
+                location = Data.location
+            };
+            
+            List<Items> items = new List<Items>();
+
+            foreach (RawItems item in Data.items)
+            {
+                items.Add(new Items()
+                {
+                    itemsId = itemId,
+                    itemName = item.itemName,
+                    itemQuantity = item.amount,
+                    location = Data.location
+                });
+            }
+
+            await _dataContext.Renting.AddAsync(renting);
+            foreach (Items item in items)
+            {
+                await _dataContext.Items.AddAsync(item);
+            }
+            await _dataContext.SaveChangesAsync();
+            
+            return Ok();
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gqfj8Z3XbANr80h6nSvr0CF0x/lizWovOJmtL9PK+rHIYb3zHpLfYI5Zg66FmmGewmblUYitpVzIOKNJSqE89w==",
+  "dgSpecHash": "2gKhhF+fcSnELbavPpWXiPvQ/1xJ5LpfL5KIce2splP6QhpzHMxbOaOFI64aBFj9wD67O7Usplmoiu7Sp09nhg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Cameron\\Documents\\CodingProgramming\\Projects\\warehouseDBMS\\backend\\warehousedbms\\warehousedbms.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,8 @@
     "C:\\Users\\Cameron\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\Cameron\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Cameron\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\Cameron\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    "C:\\Users\\Cameron\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Cameron\\.nuget\\packages\\unified\\1.0.3\\unified.1.0.3.nupkg.sha512"
   ],
   "logs": []
 }

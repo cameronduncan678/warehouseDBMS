@@ -25,6 +25,7 @@
       "warehousedbms/1.0.0": {
         "dependencies": {
           "Pomelo.EntityFrameworkCore.MySql": "3.2.4",
+          "Unified": "1.0.3",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -604,6 +605,17 @@
         },
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+        }
+      },
+      "Unified/1.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Unified.dll": {
+            "assemblyVersion": "1.0.3.0",
+            "fileVersion": "1.0.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Unified.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2402,6 +2414,13 @@
       "sha512": "sha512-j81Lovt90PDAq8kLpaJfJKV/rWdWuEk6jfV+MBkee33vzYLEUsy4gXK8laa9V2nZlLM9VM9yA/OOQxxPEJKAMw==",
       "path": "system.diagnostics.diagnosticsource/4.7.1",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    },
+    "Unified/1.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qKbDFGgXhXUxKBckIRuM7SrjF4apJ1qesV4H/kpht19QGEZqqFgI5bYFfOEmSWC2JEtex5CX1YWn4PsPT5awrQ==",
+      "path": "unified/1.0.3",
+      "hashPath": "unified.1.0.3.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
