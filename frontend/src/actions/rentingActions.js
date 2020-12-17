@@ -16,32 +16,28 @@ export const fetchRenting = () => dispatch => {
         })
 };
 
-//Object from Add Data rollout
-// data = {
-//     LeaseEnd: "",
-//     client: "",
-//     items: [
-//         {
-//             amount: 0,
-//             itemName: "",
-//             pricePerWeek: 0
-//         }
-//     ],
-//     location: ""
+//Data Object recieved from app
+// {
+//     LeaseEnd: "2021-03-19"
+//     client: "Nathan Nelson"
+//     itemQuantity: 1
+//     items: Array(1)[
+//     {
+//         amount: 10
+//         itemName: "Industrial Laptops"
+//         pricePerWeek: 1000
+//     }
+// ]
+//     
+//     location: "aberdeen"
+//     pricePerWeek: 1000
+//     slots: 2
+//     spaces: 0
+//     status: "storage"
 // }
 
 export const addRenting = (newData) => dispatch => {
-    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json',
-        { headers: { "Access-Control-Allow-Origin": "*" } })
-        .then((packet) => {
-            var dataArr = packet.data.rentals;
-            newData.orderId = uuidv4();
-            dataArr.unshift(newData);
-            dispatch({
-                type: ADD_RENTING,
-                payload: dataArr
-            })
-        })
+    axios.post(localhost, newData, { headers: { "Access-Control-Allow-Origin": "*" } })
 }
 
 export const filterRenting = (filterObj) => dispatch => {

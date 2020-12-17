@@ -12,10 +12,10 @@ export const fetchLocations = () => dispatch => {
                 type: FETCH_LOCATIONS,
                 payload: packet.data
             })
-            console.log(packet.data);
+
         })
 }
 
 export const updateLocationTargets = (targetObj) => dispatch => {
-    console.log(targetObj);
+
 }

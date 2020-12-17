@@ -1,8 +1,11 @@
 import { FETCH_ITEMS } from './types';
 import axios from 'axios';
 
+const dummy = "https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/items.json";
+const localhost = 'http://localhost:5555/items';
+
 export const fetchItems = (itemId) => dispatch => {
-    axios.get('https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/items.json',
+    axios.get(dummy,
         { headers: { "Access-Control-Allow-Origin": "*" } })
         .then((packet) => {
             dispatch({
@@ -10,4 +13,8 @@ export const fetchItems = (itemId) => dispatch => {
                 payload: packet.data.items
             })
         })
+}
+
+export const addItem = (itemObj) => dispatch => {
+    axios.post(localhost, itemObj, { headers: { "Access-Control-Allow-Origin": "*" } });
 }

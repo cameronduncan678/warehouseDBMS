@@ -1,12 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { addItem } from '../actions/itemActions';
+import { connect } from 'react-redux';
 
 class Items extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
-            showModal: false
+            showModal: false,
+            itemObj_name: '',
+            itemObj_amount: 0,
         })
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     generatePrices(quantity) {
@@ -27,6 +37,25 @@ class Items extends React.Component {
     // Open the add item modal
     openModal = () => {
         this.setState({ showModal: true });
+    }
+
+    commitItem = () => {
+        if (this.props.items[0]) {
+            let loc = this.props.items[0].location;
+            let id = this.props.items[0].itemsId;
+            if (this.itemObj_name !== '' && this.itemObj_amount !== '') {
+                let itemObj = {
+                    itemName: this.state.itemObj_name,
+                    itemQuantity: parseInt(this.state.itemObj_amount),
+                    location: loc,
+                    itemsId: id
+                }
+                //console.log(itemObj);
+                this.props.addItem(itemObj);
+            }
+        }
+
+        this.setState({ showModal: false });
     }
 
     // Close the add item modal
@@ -82,7 +111,7 @@ class Items extends React.Component {
                             <div className="wh-addData-input">
                                 <div className="wh-addData-input-title">Item Name:</div>
                                 <div className="wh-addData-input-feild" >
-                                    <input type="text" name="itemObj_name"></input>
+                                    <input type="text" name="itemObj_name" onChange={this.onChange}></input>
                                 </div>
                             </div>
                         </div>
@@ -90,13 +119,13 @@ class Items extends React.Component {
                             <div className="wh-addData-input">
                                 <div className="wh-addData-input-title">Quantity:</div>
                                 <div className="wh-addData-input-feild" >
-                                    <input type="text" name="itemObj_amount"></input>
+                                    <input type="text" name="itemObj_amount" onChange={this.onChange}></input>
                                 </div>
                             </div>
                         </div>
                         <div className="section">
                             <div className="wh-addData-input">
-                                <button className="wh-addData-commit-btn btn">Commit Item</button>
+                                <button className="wh-addData-commit-btn btn" onClick={this.commitItem}>Commit Item</button>
                                 <button className="wh-addData-cancel-btn btn" onClick={this.closeModal}>Cancel</button>
                             </div>
                         </div>
@@ -108,4 +137,5 @@ class Items extends React.Component {
 
 }
 
-export default Items;
+
+export default connect(null, { addItem })(Items);
