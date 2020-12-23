@@ -18,12 +18,12 @@ class LocationCard extends React.Component {
         {
             total: this.props.location.usedSpaces,
             key: 'Used Spaces',
-            color: '#ff7d1c'
+            color: '#047067'
         },
         {
             total: this.props.location.totalSpaces - this.props.location.usedSpaces,
             key: 'Remaining Spaces',
-            color: '#047067'
+            color: '#ff7d1c'
         }
     ]
 

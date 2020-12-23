@@ -156,7 +156,7 @@
 }
 
 .wh-newReport-space{
-    padding: 50px;
+    padding: 30px;
 }
 
 .wh-newReport-form{
@@ -165,11 +165,11 @@
 }
 
 .wh-newReport-form label{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .wh-newReport-input{
-    padding: 20px;
+    padding: 10px;
     background: $mainGreen;
     color: $mainOrange;
     border-radius: 5px;
@@ -184,12 +184,13 @@
 }
 
 .wh-newReport-summary{
-    height: 350px;
+    height: 300px;
     margin-top: 30px;
     margin-bottom: 30px;
     background: $mainGreen;
     padding: 20px;
     color: $mainOrange;
+    border-radius: 5px;
 }
 
 .wh-newReport-summary label{
@@ -197,12 +198,13 @@
 }
 
 .wh-newReport-summary-text{
-    height: 250px;
+    height: 200px;
     width: 100%;
     border-radius: 5px;
     background: $mainGreen;
     border: solid 2px $mainOrange;
     margin-top: 10px;
+    color: $mainOrange;
 }
 
 .wh-newReport-btns{
@@ -229,4 +231,8 @@
     background: red;
     color: $mainGreen;
     cursor: pointer;
+}
+
+.wh-newReport-files{
+    
 }

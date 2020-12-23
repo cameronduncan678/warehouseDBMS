@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchReports } from '../actions/reportsActions';
+import { fetchReports, addNewReport } from '../actions/reportsActions';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
@@ -10,8 +10,13 @@ class Reports extends React.Component {
             reportTitle: '',
             reportSummary: '',
             reportLinks: [],
-            showModal: false
+            showModal: false,
+            newReportTitle: '',
+            newReportSummary: '',
+            newReportFiles: {},
         }
+
+        this.onChange = this.onChange.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +39,31 @@ class Reports extends React.Component {
     // Close the add item modal
     closeModal = () => {
         this.setState({ showModal: false });
+    }
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+    onFileChange = event => {
+
+        this.setState({ newReportFiles: event.target.files });
+    }
+
+    commitReport() {
+        if (this.state.newReportTitle !== '' && this.state.newReportSummary !== '') {
+            let today = new Date();
+
+            let newReportObj = {
+                reportTitle: this.state.newReportTitle,
+                reportText: this.state.newReportSummary,
+                reportAuthor: this.props.localUser.firstName + " " + this.props.localUser.lastName,
+                reportFiles: this.state.newReportFiles
+            }
+            this.props.addNewReport(newReportObj);
+            this.closeModal();
+        }
+
     }
 
     fileExtension(file) {
@@ -134,20 +164,20 @@ class Reports extends React.Component {
                         <div className="wh-newReport-form">
                             <div className="wh-newReport-input">
                                 <label for="newReportTitle">Title</label>
-                                <input type="text" name="newReportTitle"></input>
+                                <input type="text" name="newReportTitle" onChange={this.onChange}></input>
                             </div>
                             <div className="wh-newReport-summary">
                                 <label for="newReportSummary">Summary</label>
                                 <br></br>
-                                <input className="wh-newReport-summary-text" type="textbox" name="newReportSummary"></input>
+                                <textarea className="wh-newReport-summary-text" name="newReportSummary" onChange={this.onChange}></textarea>
                             </div>
                             <div className="wh-newReport-input">
                                 <label for="newReportFiles">Files</label>
                                 <br></br>
-                                <input type="file" name="newReportFiles"></input>
+                                <input className="wh-newReport-files" type="file" name="newReportFiles" multiple onChange={this.onFileChange}></input>
                             </div>
                             <div className="wh-newReport-btns">
-                                <button className="wh-newReport-btns-commit">Commit</button>
+                                <button className="wh-newReport-btns-commit" onClick={() => this.commitReport()}>Commit</button>
                                 <button className="wh-newReport-btns-cancel" onClick={this.closeModal}>Cancel</button>
                             </div>
                         </div>
@@ -160,7 +190,8 @@ class Reports extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    localReports: state.reports.data
+    localReports: state.reports.data,
+    localUser: state.user.data
 });
 
-export default connect(mapStateToProps, { fetchReports })(Reports);
+export default connect(mapStateToProps, { fetchReports, addNewReport })(Reports);

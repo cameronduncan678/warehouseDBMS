@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { FETCH_REPORTS, LATEST_REPORT } from './types';
+import { UploadFile } from '../AWS_utils';
 
 var dummy = 'https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/reports.json';
 var localhost = 'http://localhost:5555/reports';
@@ -25,3 +26,16 @@ export const fetchLatestReports = () => dispatch => {
             })
         });
 };
+
+export const addNewReport = (fileObj) => async dispatch => {
+    let links = await UploadFile(fileObj);
+    //console.log(links);
+    let report = {
+        reportTitle: fileObj.reportTitle,
+        reportAuthor: fileObj.reportAuthor,
+        reportLinks: links,
+        reportText: fileObj.reportText
+    };
+
+    console.log(report);
+}
