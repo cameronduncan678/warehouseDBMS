@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchReports } from '../actions/reportsActions';
 import { connect } from 'react-redux';
+import Modal from 'react-modal';
 
 class Reports extends React.Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Reports extends React.Component {
         this.state = {
             reportTitle: '',
             reportSummary: '',
-            reportLinks: []
+            reportLinks: [],
+            showModal: false
         }
     }
 
@@ -22,6 +24,16 @@ class Reports extends React.Component {
             reportSummary: this.props.localReports[index].reportText,
             reportLinks: this.props.localReports[index].links
         })
+    }
+
+    // Open the add item modal
+    openModal = () => {
+        this.setState({ showModal: true });
+    }
+
+    // Close the add item modal
+    closeModal = () => {
+        this.setState({ showModal: false });
     }
 
     fileExtension(file) {
@@ -88,7 +100,7 @@ class Reports extends React.Component {
                                                 <div className="wh-timeline-title-title">Timeline</div>
                                             </div>
                                             <div className="col s6">
-                                                <div className="btn wh-timeline-title-add">
+                                                <div className="btn wh-timeline-title-add" onClick={this.openModal}>
                                                     <i className="fas fa-plus-square"></i>
                                                 </div>
                                             </div>
@@ -117,6 +129,31 @@ class Reports extends React.Component {
                         </div>
                     </div>
                 </section>
+                <Modal className="wh-newReport-modal" isOpen={this.state.showModal} overlayClassName="wh-modal-Overlay">
+                    <div className="wh-newReport-space">
+                        <div className="wh-newReport-form">
+                            <div className="wh-newReport-input">
+                                <label for="newReportTitle">Title</label>
+                                <input type="text" name="newReportTitle"></input>
+                            </div>
+                            <div className="wh-newReport-summary">
+                                <label for="newReportSummary">Summary</label>
+                                <br></br>
+                                <input className="wh-newReport-summary-text" type="textbox" name="newReportSummary"></input>
+                            </div>
+                            <div className="wh-newReport-input">
+                                <label for="newReportFiles">Files</label>
+                                <br></br>
+                                <input type="file" name="newReportFiles"></input>
+                            </div>
+                            <div className="wh-newReport-btns">
+                                <button className="wh-newReport-btns-commit">Commit</button>
+                                <button className="wh-newReport-btns-cancel" onClick={this.closeModal}>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </Modal>
+
             </div>
         )
     }

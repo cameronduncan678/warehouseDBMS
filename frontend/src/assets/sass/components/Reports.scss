@@ -154,3 +154,79 @@
     font-size: 60px;
     padding: 20px;
 }
+
+.wh-newReport-space{
+    padding: 50px;
+}
+
+.wh-newReport-form{
+    height: 100%;
+    width: 100%;
+}
+
+.wh-newReport-form label{
+    font-size: 30px;
+}
+
+.wh-newReport-input{
+    padding: 20px;
+    background: $mainGreen;
+    color: $mainOrange;
+    border-radius: 5px;
+}
+
+.wh-newReport-input label{
+    color: $mainOrange;
+}
+
+.wh-newReport-input input{
+    color: $mainOrange;
+}
+
+.wh-newReport-summary{
+    height: 350px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: $mainGreen;
+    padding: 20px;
+    color: $mainOrange;
+}
+
+.wh-newReport-summary label{
+    color: $mainOrange;
+}
+
+.wh-newReport-summary-text{
+    height: 250px;
+    width: 100%;
+    border-radius: 5px;
+    background: $mainGreen;
+    border: solid 2px $mainOrange;
+    margin-top: 10px;
+}
+
+.wh-newReport-btns{
+    margin-top: 10px;
+    height: 50px;
+}
+
+.wh-newReport-btns button{
+    height: 100%;
+    width: 130px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.wh-newReport-btns-commit{
+    float: left;
+    background: $mainGreen;
+    color: $mainOrange;
+    cursor: pointer;
+}
+
+.wh-newReport-btns-cancel{
+    float: right;
+    background: red;
+    color: $mainGreen;
+    cursor: pointer;
+}

@@ -22,6 +22,17 @@
     border-radius: 10px;
 }
 
+.wh-newReport-modal{
+    position: absolute;
+    top: 50px;
+    left: 20%;
+    right: 20%;
+    bottom: 100px;
+    background: $mainOrange;
+    border: none !important;
+    border-radius: 10px;
+}
+
 .wh-modal-Overlay {
     position: fixed;
     top: 0;
