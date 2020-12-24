@@ -23,6 +23,7 @@
         <e p="RawItem.cs" t="Include" />
         <e p="RawItems.cs" t="Include" />
         <e p="RawRenting.cs" t="Include" />
+        <e p="RawReport.cs" t="Include" />
         <e p="Renting.cs" t="Include" />
         <e p="RentingWithItems.cs" t="Include" />
         <e p="ReportLinks.cs" t="Include" />

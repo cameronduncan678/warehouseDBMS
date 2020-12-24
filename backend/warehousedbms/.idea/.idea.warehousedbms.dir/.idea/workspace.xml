@@ -25,26 +25,12 @@
     <list default="true" id="3ffe3c86-fab9-4ce1-bd98-b43f8c6cbf43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ItemsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ItemsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/RentingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RentingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ReportsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ReportsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/warehousedbms.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/warehousedbms.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/warehousedbms.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/warehousedbms.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehousedbms.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/warehousedbms.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/actions/locationsActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/actions/locationsActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/actions/rentingActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/actions/rentingActions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,12 +60,13 @@
         <option value="$PROJECT_DIR$/Data/DataContext.cs" />
         <option value="$PROJECT_DIR$/Models/ReportWithReportLink.cs" />
         <option value="$PROJECT_DIR$/Utils/ReportsUtils.cs" />
-        <option value="$PROJECT_DIR$/Controllers/ReportsController.cs" />
         <option value="$PROJECT_DIR$/Models/RawItems.cs" />
         <option value="$PROJECT_DIR$/Models/RawRenting.cs" />
         <option value="$PROJECT_DIR$/Controllers/RentingController.cs" />
         <option value="$PROJECT_DIR$/Models/RawItem.cs" />
         <option value="$PROJECT_DIR$/Controllers/ItemsController.cs" />
+        <option value="$PROJECT_DIR$/Models/RawReport.cs" />
+        <option value="$PROJECT_DIR$/Controllers/ReportsController.cs" />
       </list>
     </option>
   </component>
@@ -97,6 +84,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.warehousedbms">
@@ -148,7 +136,9 @@
       <workItem from="1607517891721" duration="2619000" />
       <workItem from="1608059445690" duration="9444000" />
       <workItem from="1608106571464" duration="5690000" />
-      <workItem from="1608222720645" duration="2952000" />
+      <workItem from="1608222720645" duration="4226000" />
+      <workItem from="1608378865823" duration="1581000" />
+      <workItem from="1608711345522" duration="7006000" />
     </task>
     <servers />
   </component>
@@ -253,5 +243,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="288" key="GridCell.Tab.4.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1608069001197" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1608799450245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1608799450245" />
   </component>
 </project>

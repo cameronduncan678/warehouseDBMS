@@ -37,5 +37,5 @@ export const addNewReport = (fileObj) => async dispatch => {
         reportText: fileObj.reportText
     };
 
-    console.log(report);
+    axios.post(localhost, report, { headers: { "Access-Control-Allow-Origin": "*" } });
 }
