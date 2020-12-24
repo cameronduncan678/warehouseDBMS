@@ -12,6 +12,7 @@
         <e p="LocationController.cs" t="Include" />
         <e p="RentingController.cs" t="Include" />
         <e p="ReportsController.cs" t="Include" />
+        <e p="TargetsController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="DataContext.cs" t="Include" />
@@ -24,6 +25,7 @@
         <e p="RawItems.cs" t="Include" />
         <e p="RawRenting.cs" t="Include" />
         <e p="RawReport.cs" t="Include" />
+        <e p="RawTargets.cs" t="Include" />
         <e p="Renting.cs" t="Include" />
         <e p="RentingWithItems.cs" t="Include" />
         <e p="ReportLinks.cs" t="Include" />
