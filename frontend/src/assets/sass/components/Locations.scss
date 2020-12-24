@@ -319,6 +319,32 @@
     border: solid 3px red;
 }
 
+.wh-newTargets-btn-commit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 150px;
+    float: left;
+    background: $mainGreen;
+    color: $mainOrange;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+.wh-newTargets-btn-cancel{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 150px;
+    float: right;
+    color: $mainGreen;
+    background: red;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 600px){
     .wh-locations-wdgt-dash{
         height: 1000px;

@@ -33,6 +33,45 @@
     border-radius: 10px;
 }
 
+.wh-targets-modal{
+    position: absolute;
+    top: 50px;
+    left: 20%;
+    right: 20%;
+    background: $mainOrange;
+    border: none !important;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.wh-targets-modal h5{
+    padding: 20px;
+    color: $mainGreen;
+    text-transform: capitalize;
+}
+
+.wh-targets-modal-inputfeild{
+    background: $mainGreen;
+    border-radius: 5px;
+    height: 130px;
+}
+
+.wh-targets-modal-input{
+    width: 25%;
+    float: left;
+    color: $mainGreen;
+    padding: 20px;
+}
+
+.wh-targets-modal-input label{
+    color: $mainOrange;
+    font-size: 20px;
+}
+
+.wh-targets-modal-input input{
+    color: $mainOrange;
+}
+
 .wh-modal-Overlay {
     position: fixed;
     top: 0;

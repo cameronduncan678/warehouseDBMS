@@ -1,7 +1,26 @@
 import React from 'react';
 import * as d3 from "d3";
+import Modal from 'react-modal';
+import { updateTargets } from '../actions/targetsActions';
+import { connect } from 'react-redux';
 
 class LocationCard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showModal: false,
+            percInput: '',
+            slotsInput: '',
+            spacesInput: '',
+            incomeInput: ''
+        }
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
 
     pieId1 = `pGraph1${this.props.id}`;
     pieId2 = `pGraph2${this.props.id}`;
@@ -47,6 +66,31 @@ class LocationCard extends React.Component {
             .attr('stroke', '#047067')
             .attr('stroke-width', 3)
             .attr('fill', d => d.data.color);
+    }
+
+    closeModal() {
+        this.setState({
+            showModal: false
+        })
+    }
+
+    openModal() {
+        this.setState({
+            showModal: true
+        })
+    }
+
+    commitNewTargets() {
+        let targetObj = {
+            locationId: this.props.location.locationId,
+            perc: +this.state.percInput,
+            slots: +this.state.slotsInput,
+            spaces: +this.state.spacesInput,
+            income: +this.state.incomeInput
+        }
+
+        this.props.updateTargets(targetObj);
+        this.closeModal();
     }
 
     render() {
@@ -101,7 +145,7 @@ class LocationCard extends React.Component {
                             <div className="wh-locations-targets-projections">
                                 Next Month Projections: <span className={projectionCheck(this.props.location)}>£{this.props.location.projection}</span>
                             </div>
-                            <div className="wh-locations-targets-new">
+                            <div className="wh-locations-targets-new" onClick={() => this.openModal()}>
                                 New Targets
                             </div>
                         </div>
@@ -121,10 +165,37 @@ class LocationCard extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Modal className="wh-targets-modal" isOpen={this.state.showModal} overlayClassName="wh-modal-Overlay">
+                    <div>
+                        <h5>New Targets: {this.props.location.location}</h5>
+                        <div className="wh-targets-modal-inputfeild">
+                            <div className="wh-targets-modal-input">
+                                <label for="percInput">Percentage</label>
+                                <input name="percInput" type="text" onChange={this.onChange}></input>
+                            </div>
+                            <div className="wh-targets-modal-input">
+                                <label for="slotsInput">Slots</label>
+                                <input name="slotsInput" type="text" onChange={this.onChange}></input>
+                            </div>
+                            <div className="wh-targets-modal-input">
+                                <label for="spacesInput">Spaces</label>
+                                <input name="spacesInput" type="text" onChange={this.onChange}></input>
+                            </div>
+                            <div className="wh-targets-modal-input">
+                                <label for="incomeInput">Income</label>
+                                <input name="incomeInput" type="text" onChange={this.onChange}></input>
+                            </div>
+                        </div>
+                        <div>
+                            <button className="wh-newTargets-btn-commit" onClick={() => this.commitNewTargets()}>Commit</button>
+                            <button className="wh-newTargets-btn-cancel" onClick={() => this.closeModal()}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal>
             </div>
         )
     }
 
 }
 
-export default LocationCard;
+export default connect(null, { updateTargets })(LocationCard);
