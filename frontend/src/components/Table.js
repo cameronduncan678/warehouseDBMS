@@ -28,7 +28,7 @@ class Table extends React.Component {
                         <td className="wh-table-data-2">{row.client}</td>
                         <td className="wh-table-data-3">{row.itemQuantity}</td>
                         <td>£{row.pricePerWeek}</td>
-                        <td className="wh-table-data-4">{row.LeaseEnd}</td>
+                        <td className="wh-table-data-4">{row.leaseEnd}</td>
                         <td className="wh-table-data-5"><div className={statusElement(row.status)}>{row.status}</div></td>
                         <td className="wh-table-data-6">{row.location}</td>
                         <td className="wh-table-data-7">
@@ -52,7 +52,7 @@ class Table extends React.Component {
                     <td className="wh-table-data-2">{row.client}</td>
                     <td className="wh-table-data-3">{row.itemQuantity}</td>
                     <td>£{row.pricePerWeek}</td>
-                    <td className="wh-table-data-4">{row.LeaseEnd}</td>
+                    <td className="wh-table-data-4">{row.leaseEnd}</td>
                     <td className="wh-table-data-5"><div className={statusElement(row.status)}>{row.status}</div></td>
                     <td className="wh-table-data-6">{row.location}</td>
                     <td className="wh-table-data-7">

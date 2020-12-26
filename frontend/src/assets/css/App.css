@@ -1,5 +1,5 @@
 [type="radio"]:not(:checked),[type="radio"]:checked{position:static !important;opacity:1 !important;pointer-events:auto !important}
-.wh-AddData-modal{position:absolute;top:200px;left:20%;right:20%;bottom:400px;background:#ff7d1c;border:none !important;border-radius:10px}
+.wh-AddData-modal{position:absolute;top:200px;left:20%;right:20%;background:#ff7d1c;border:none !important;border-radius:10px}
 .wh-newTargets-modal{position:absolute;top:200px;left:20%;right:20%;bottom:400px;background:#ff7d1c;border:none !important;border-radius:10px}
 .wh-newReport-modal{position:absolute;top:50px;left:20%;right:20%;background:#ff7d1c;border:none !important;border-radius:10px}
 .wh-targets-modal{position:absolute;top:50px;left:20%;right:20%;background:#ff7d1c;border:none !important;border-radius:10px;padding:10px}

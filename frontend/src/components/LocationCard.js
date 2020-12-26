@@ -79,7 +79,7 @@ class LocationCard extends React.Component {
             showModal: true
         })
     }
-
+    
     commitNewTargets() {
         let targetObj = {
             locationId: this.props.location.locationId,

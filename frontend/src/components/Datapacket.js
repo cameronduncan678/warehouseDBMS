@@ -7,7 +7,7 @@ class DataPacket extends React.Component {
         super(props);
         this.state = {
             client: this.props.data.client,
-            leaseEnd: this.props.data.LeaseEnd,
+            leaseEnd: this.props.data.leaseEnd,
             location: this.props.data.location,
             status: this.props.data.status
         }
