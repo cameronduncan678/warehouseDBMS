@@ -15,6 +15,10 @@ class Database extends React.Component {
         this.props.fetchRenting();
     }
 
+    // componentDidUpdate() {
+    //     this.props.fetchRenting();
+    // }
+
     newDataRollout = () => {
         jQuery('#databaseUI').hide();
         jQuery('#newDataUI').show();

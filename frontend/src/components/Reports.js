@@ -50,7 +50,7 @@ class Reports extends React.Component {
         this.setState({ newReportFiles: event.target.files });
     }
 
-    commitReport() {
+    async commitReport() {
         if (this.state.newReportTitle !== '' && this.state.newReportSummary !== '') {
             let today = new Date();
 
@@ -60,7 +60,8 @@ class Reports extends React.Component {
                 reportAuthor: this.props.localUser.firstName + " " + this.props.localUser.lastName,
                 reportFiles: this.state.newReportFiles
             }
-            this.props.addNewReport(newReportObj);
+            await this.props.addNewReport(newReportObj);
+            this.props.fetchReports();
             this.closeModal();
         }
 
