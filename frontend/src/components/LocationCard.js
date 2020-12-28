@@ -2,6 +2,7 @@ import React from 'react';
 import * as d3 from "d3";
 import Modal from 'react-modal';
 import { updateTargets } from '../actions/targetsActions';
+import { fetchLocations } from '../actions/locationsActions';
 import { connect } from 'react-redux';
 
 class LocationCard extends React.Component {
@@ -26,11 +27,23 @@ class LocationCard extends React.Component {
     pieId2 = `pGraph2${this.props.id}`;
     barId = `bGraph${this.props.id}`;
 
+    redBar = this.barId + 'redBar';
+    orangeBar = this.barId + 'orangeBar';
+    greenBar = this.barId + 'greenBar';
+
     canvasHeight = 300;
     canvasWidth = 600;
 
     radius = 130;
 
+    //For location Card Barchart testing
+    dummyGraph =
+        {
+            location: 'manchester',
+            totalStorage: 60,
+            totalWarning: 30,
+            totalOver: 10
+        }
 
 
     graphData = [
@@ -51,12 +64,19 @@ class LocationCard extends React.Component {
     arcPath = d3.arc().outerRadius(this.radius).innerRadius(this.radius / 2);
 
     componentDidMount() {
+
+        // D3 logic
         const svg1 = d3.select(`#${this.pieId1}`).attr('viewBox', `0 0 ${this.canvasWidth} ${this.canvasHeight}`);
         const svg3 = d3.select(`#${this.barId}`)
             .attr('viewBox', '0 0 400 30')
             .attr('transform', 'translate(20 0)');
 
-        const graph = svg1.append('g').attr('transform', `translate(${this.canvasWidth / 2}, ${this.canvasHeight / 2})`)
+        const orangeBarGraph = d3.select(`#${this.orangeBar}`);
+        const greenBarGraph = d3.select(`#${this.greenBar}`);
+
+        const storageScale = d3.scaleLinear().range([0, 300]).domain([0, 100]);
+
+        const graph = svg1.append('g').attr('transform', `translate(${this.canvasWidth / 2}, ${this.canvasHeight / 2})`);
 
         graph.selectAll('path')
             .data(this.angles)
@@ -66,6 +86,20 @@ class LocationCard extends React.Component {
             .attr('stroke', '#047067')
             .attr('stroke-width', 3)
             .attr('fill', d => d.data.color);
+
+
+        if (this.props.location.stats.totalStorage != 0) {
+            const greenScale = storageScale(this.props.location.stats.totalStorage);
+
+            greenBarGraph.attr('width', greenScale);
+
+            if (this.props.location.stats.totalWarning != 0) {
+                const orangeScale = greenScale + storageScale(this.props.location.stats.totalWarning);
+                orangeBarGraph.attr('width', orangeScale);
+            }
+        }
+
+
     }
 
     closeModal() {
@@ -79,8 +113,8 @@ class LocationCard extends React.Component {
             showModal: true
         })
     }
-    
-    commitNewTargets() {
+
+    async commitNewTargets() {
         let targetObj = {
             locationId: this.props.location.locationId,
             perc: +this.state.percInput,
@@ -89,7 +123,8 @@ class LocationCard extends React.Component {
             income: +this.state.incomeInput
         }
 
-        this.props.updateTargets(targetObj);
+        await this.props.updateTargets(targetObj);
+        setTimeout(() => { this.props.fetchLocations(); }, 700);
         this.closeModal();
     }
 
@@ -151,15 +186,15 @@ class LocationCard extends React.Component {
                         </div>
                         <div className="wh-locations-status">
                             <div className="wh-locations-status-statuses">
-                                <span className="wh-locations-status-store">83%</span>
-                                <span className="wh-locations-status-warn">11%</span>
-                                <span className="wh-locations-status-over">2%</span>
+                                <span className="wh-locations-status-store">{this.props.location.stats.totalStorage}%</span>
+                                <span className="wh-locations-status-warn">{this.props.location.stats.totalWarning}%</span>
+                                <span className="wh-locations-status-over">{this.props.location.stats.totalOver}%</span>
                             </div>
                             <div className="wh-locations-status-bar">
                                 <svg id={this.barId}>
-                                    <rect width="300" height="30" fill="red"></rect>
-                                    <rect width="295" height="30" fill="orange"></rect>
-                                    <rect width="260" height="30" fill="lightgreen"></rect>
+                                    <rect id={this.redBar} width="300" height="30" fill="red"></rect>
+                                    <rect id={this.orangeBar} height="30" fill="orange"></rect>
+                                    <rect id={this.greenBar} height="30" fill="lightgreen"></rect>
                                 </svg>
                             </div>
                         </div>
@@ -171,19 +206,19 @@ class LocationCard extends React.Component {
                         <div className="wh-targets-modal-inputfeild">
                             <div className="wh-targets-modal-input">
                                 <label for="percInput">Percentage</label>
-                                <input name="percInput" type="text" onChange={this.onChange}></input>
+                                <input name="percInput" type="text" onChange={this.onChange} defaultValue={this.props.location.targets.perc}></input>
                             </div>
                             <div className="wh-targets-modal-input">
                                 <label for="slotsInput">Slots</label>
-                                <input name="slotsInput" type="text" onChange={this.onChange}></input>
+                                <input name="slotsInput" type="text" onChange={this.onChange} defaultValue={this.props.location.targets.slots}></input>
                             </div>
                             <div className="wh-targets-modal-input">
                                 <label for="spacesInput">Spaces</label>
-                                <input name="spacesInput" type="text" onChange={this.onChange}></input>
+                                <input name="spacesInput" type="text" onChange={this.onChange} defaultValue={this.props.location.targets.spaces}></input>
                             </div>
                             <div className="wh-targets-modal-input">
                                 <label for="incomeInput">Income</label>
-                                <input name="incomeInput" type="text" onChange={this.onChange}></input>
+                                <input name="incomeInput" type="text" onChange={this.onChange} defaultValue={this.props.location.targets.income}></input>
                             </div>
                         </div>
                         <div>
@@ -198,4 +233,4 @@ class LocationCard extends React.Component {
 
 }
 
-export default connect(null, { updateTargets })(LocationCard);
+export default connect(null, { updateTargets, fetchLocations })(LocationCard);
