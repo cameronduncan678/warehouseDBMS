@@ -27,6 +27,7 @@ namespace warehousedbms.Controllers
             var locations = _dbContext.Location.ToList();
             var targets = _dbContext.Targets.ToList();
             var items = _dbContext.Items.ToList();
+            var rentings = _dbContext.Renting.ToList();
 
             List<LocationWithTargets> locationWithTargets = new List<LocationWithTargets>();
             
@@ -35,6 +36,7 @@ namespace warehousedbms.Controllers
             foreach (Location loc in locations)
             {
                 int spaces = LocationUtils.GetSpaces(items, loc.location);
+
                 locationWithTargets.Add(new LocationWithTargets()
                 {
                     locationId = loc.locationId,
@@ -47,7 +49,8 @@ namespace warehousedbms.Controllers
                     availableSlots = (loc.totalSpaces - spaces) / 5,
                     incomePerWeek = LocationUtils.GetIncome(spaces),
                     projection = projection.projectionGenerator(loc.location),
-                    targets = LocationUtils.LocationTarget(targets, loc.locationId)
+                    targets = LocationUtils.LocationTarget(targets, loc.locationId),
+                    stats = LocationUtils.GetStatusFigures(rentings, loc.location, spaces)
                 });
             }
 

@@ -13,5 +13,7 @@
         public int incomePerWeek { get; set; }
         public int projection { get; set; }
         public Targets targets { get; set; }
+        
+        public LocationStatus stats { get; set; } 
     }
 }

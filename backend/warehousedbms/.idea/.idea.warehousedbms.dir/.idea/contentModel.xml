@@ -20,6 +20,7 @@
       <e p="Models" t="Include">
         <e p="Items.cs" t="Include" />
         <e p="Location.cs" t="Include" />
+        <e p="LocationStatus.cs" t="Include" />
         <e p="LocationWithTargets.cs" t="Include" />
         <e p="RawItem.cs" t="Include" />
         <e p="RawItems.cs" t="Include" />

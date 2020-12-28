@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using warehousedbms.Models;
@@ -44,6 +45,54 @@ namespace warehousedbms.Utils
                     income = 0
                 };
             }
+        }
+
+        public static LocationStatus GetStatusFigures(List<Renting> rentings, string location, int totalUsed)
+        {
+            var locationRentings = rentings.Where(r => r.location == location).ToList();
+
+            int storage = 0;
+            int warning = 0;
+            int over = 0;
+
+            foreach (Renting renting in locationRentings)
+            {
+                string status = RentingUtils.GetStatus(renting.LeaseEnd, renting.status);
+
+                if (status != "vacant")
+                {
+                    if (status == "storage")
+                    {
+                        storage++;
+                    }
+
+                    if (status == "warning")
+                    {
+                        warning++;
+                    }
+
+                    if (status == "over")
+                    {
+                        over++;
+                    }
+                }
+            }
+
+            int totalStatus = storage + warning + over;
+
+            float _totalStorage = ((float)storage / totalStatus) * 100;
+            float _totalWarning = ((float)warning / totalStatus) * 100;
+            float _totalOver = ((float)over / totalStatus) * 100;
+            
+            LocationStatus stats = new LocationStatus()
+            {
+                totalStorage = (int)_totalStorage,
+                totalWarning = (int)_totalWarning,
+                totalOver = (int)_totalOver
+            };
+
+            return stats;
+
         }
     }
 }
