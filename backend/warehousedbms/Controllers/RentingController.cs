@@ -57,6 +57,36 @@ namespace warehousedbms.Controllers
             return procesedData;
         }
 
+        [HttpGet("{id}")]
+        public RentingWithItems GetRentingById(string id)
+        {
+            RentingWithItems query = new RentingWithItems();
+            
+            Renting renting = _dataContext.Renting.ToList().Single(r => r.orderId == id);
+            int[] _slots_spaces;
+            
+            if (renting != null)
+            {
+                var _items = _dataContext.Items.Where(i => i.itemsId == renting.itemsId).ToList();
+                _slots_spaces = RentingUtils.GetSpacesSlots(_items);
+
+                query.orderId = renting.orderId;
+                query.client = renting.client;
+                query.itemsId = renting.itemsId;
+                query.itemQuantity = RentingUtils.GetItemQuantity(_items);
+                query.spaces = _slots_spaces[0];
+                query.slots = _slots_spaces[1];
+                query.pricePerWeek = RentingUtils.GetPricePerWeek(_slots_spaces[0], _slots_spaces[1]);
+                query.LeaseEnd = renting.LeaseEnd;
+                query.status = RentingUtils.GetStatus(renting.LeaseEnd, renting.status);
+                query.location = renting.location;
+                query.items = _items;
+            }
+
+            return query;
+
+        }
+
         [HttpPost()]
         public async Task<IActionResult> PostRenting([FromBody]RawRenting Data)
         {
