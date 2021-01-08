@@ -115,17 +115,23 @@ class LocationCard extends React.Component {
     }
 
     async commitNewTargets() {
-        let targetObj = {
-            locationId: this.props.location.locationId,
-            perc: +this.state.percInput,
-            slots: +this.state.slotsInput,
-            spaces: +this.state.spacesInput,
-            income: +this.state.incomeInput
+        if (this.state.percInput != '', this.state.slotsInput != '', this.state.spacesInput != '', this.state.incomeInput != '') {
+            let targetObj = {
+                locationId: this.props.location.locationId,
+                perc: +this.state.percInput,
+                slots: +this.state.slotsInput,
+                spaces: +this.state.spacesInput,
+                income: +this.state.incomeInput
+            }
+
+            await this.props.updateTargets(targetObj);
+            setTimeout(() => { this.props.fetchLocations(); }, 700);
+            this.closeModal();
+        }
+        else {
+            alert('Please Enter Targets')
         }
 
-        await this.props.updateTargets(targetObj);
-        setTimeout(() => { this.props.fetchLocations(); }, 700);
-        this.closeModal();
     }
 
     render() {

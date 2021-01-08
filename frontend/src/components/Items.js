@@ -94,7 +94,7 @@ class Items extends React.Component {
                             <tr>
                                 <td></td>
                                 <td></td>
-                                {/* <td className="wh-dataitem-footer-total">£{this.generateTotal()}</td> */}
+                                <td className="wh-dataitem-footer-total">£{this.generateTotal()}</td>
                             </tr>
                         </tfoot>
                     </table>

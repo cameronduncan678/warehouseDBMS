@@ -26,7 +26,7 @@ export const UploadFile = async (fileObj) => {
     let links = [];
     for (var i = 0; i < fileObj.reportFiles.length; i++) {
         try {
-            links.push(await uploadToS3(fileObj.reportFiles[i]))
+            links.push(await uploadToS3(fileObj.reportFiles[i])).then(alert('Files Uploaded'));
         }
         catch (err) {
             alert('Error has ocurred, please try again');
