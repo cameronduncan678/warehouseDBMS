@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addRenting, fetchRentingById } from '../actions/rentingActions';
+import { Route, useParams } from "react-router-dom";
 
 import Items from './Items';
 import DataPacket from './Datapacket';
 
 class Renting extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props.fetchRentingById(this.props.match.params.id);
+    };
 
     render() {
 
@@ -12,10 +19,10 @@ class Renting extends React.Component {
                 <section className="section">
                     <div className="row">
                         <div className="col s12 l6">
-                            <Items items={this.props.location.state.rentingData.items} />
+                            {this.props.localRenting.items ? <Items items={this.props.localRenting.items} /> : null}
                         </div>
                         <div className="col s12 l6">
-                            <DataPacket data={this.props.location.state.rentingData} />
+                            <DataPacket data={this.props.localRenting} />
                         </div>
                     </div>
                 </section>
@@ -24,4 +31,8 @@ class Renting extends React.Component {
     }
 };
 
-export default Renting;
+const mapStateToProps = state => ({
+    localRenting: state.rentings.dat
+})
+
+export default connect(mapStateToProps, { fetchRentingById })(Renting);

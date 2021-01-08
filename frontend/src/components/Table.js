@@ -33,7 +33,7 @@ class Table extends React.Component {
                         <td className="wh-table-data-6">{row.location}</td>
                         <td className="wh-table-data-7">
                             <Link to={{
-                                pathname: '/renting',
+                                pathname: `/renting/${row.orderId}`,
                                 state: {
                                     rentingData: row
                                 }
@@ -57,7 +57,7 @@ class Table extends React.Component {
                     <td className="wh-table-data-6">{row.location}</td>
                     <td className="wh-table-data-7">
                         <Link to={{
-                            pathname: '/renting',
+                            pathname: `/renting/${row.orderId}`,
                             state: {
                                 rentingData: row
                             }

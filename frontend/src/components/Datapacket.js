@@ -25,19 +25,19 @@ class DataPacket extends React.Component {
     render() {
 
         const locationRadios = this.props.localLocations.map(data => {
-            if (data.location === this.state.location) {
+            if (this.props.data.location === this.state.location) {
                 return (
-                    <div key={data.locationId} className="wh-data-location-item">
+                    <div key={this.props.data.locationId} className="wh-data-location-item">
                         <span>{data.location}</span>
-                        <input className="browser-default" name="location" type="radio" onChange={this.onChange} value={data.location} defaultChecked></input>
+                        <input className="browser-default" name="location" type="radio" onChange={this.onChange} value={this.props.data.location} defaultChecked></input>
                     </div>
                 )
             }
             else {
                 return (
-                    <div key={data.locationId} className="wh-data-location-item">
+                    <div key={this.props.data.locationId} className="wh-data-location-item">
                         <span>{data.location}</span>
-                        <input className="browser-default" name="location" type="radio" onChange={this.onChange} value={data.location}></input>
+                        <input className="browser-default" name="location" type="radio" onChange={this.onChange} value={this.props.data.location}></input>
                     </div>
                 )
             }
@@ -49,7 +49,7 @@ class DataPacket extends React.Component {
                     <div className="wh-data-name">
                         <div className="wh-data-wgt">Name</div>
                         <div className="wh-data-input">
-                            <input type="text" name="client" onChange={this.onChange} value={this.state.client}></input>
+                            <input type="text" name="client" onChange={this.onChange} value={this.props.data.client}></input>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ class DataPacket extends React.Component {
                     <div className="wh-data-deadline">
                         <div className="wh-data-wgt">Deadline</div>
                         <div className="wh-data-input">
-                            <input type="date" name="leaseEnd" onChange={this.onChange} value={this.state.leaseEnd}></input>
+                            <input type="date" name="leaseEnd" onChange={this.onChange} value={this.props.data.leaseEnd}></input>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ class DataPacket extends React.Component {
                     <div className="wh-data-status">
                         <div className="wh-data-wgt">Status</div>
                         <div className="wh-data-input">
-                            <select className="browser-defaul" style={{ display: "block" }} name="status" onChange={this.onChange} value={this.state.status}>
+                            <select className="browser-defaul" style={{ display: "block" }} name="status" onChange={this.onChange} value={this.props.data.status}>
                                 <option value="storage" className="green">Storage</option>
                                 <option value="warning" className="orange">Warning</option>
                                 <option value="over" className="red">Over</option>

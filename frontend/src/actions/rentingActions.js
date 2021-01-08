@@ -1,6 +1,7 @@
-import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING, ITEM_RENTING } from './types';
+import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING, ITEM_RENTING, FETCH_RENTING_ID } from './types';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
+import { dispatch } from 'd3';
 
 var dummy = 'https://s3-eu-west-1.amazonaws.com/warehouse.data.placeholder/renting.json';
 var localhost = 'http://localhost:5555/renting';
@@ -15,6 +16,17 @@ export const fetchRenting = () => dispatch => {
             })
         })
 };
+
+export const fetchRentingById = (id) => dispatch => {
+    axios.get(localhost + `/${id}`,
+        { headers: { "Access-Control-Allow-Origin": "*" } })
+        .then((packet) => {
+            dispatch({
+                type: FETCH_RENTING_ID,
+                payload: packet.data
+            })
+        })
+}
 
 //Data Object recieved from app
 // {

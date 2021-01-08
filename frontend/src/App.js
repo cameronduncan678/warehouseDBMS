@@ -25,7 +25,8 @@ class App extends Component {
               <Route path="/" exact component={Dashboard} />
               <Route path="/database" component={Database} />
               <Route path="/locations" component={Locations} />
-              <Route path="/renting" component={Renting} />
+              {/* <Route path="/renting" component={Renting} /> */}
+              <Route path="/renting/:id" component={Renting} />
               <Route path='/reports' component={Reports} />
             </Switch>
           </Router >

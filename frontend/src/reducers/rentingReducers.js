@@ -1,7 +1,8 @@
-import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING } from '../actions/types';
+import { FETCH_RENTING, ADD_RENTING, FILTER_RENTING, FETCH_RENTING_ID } from '../actions/types';
 
 const initialState = {
-    data: []
+    data: [],
+    dat: {}
 };
 
 export default function (state = initialState, action) {
@@ -20,6 +21,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 data: action.payload
+            }
+        case FETCH_RENTING_ID:
+            return {
+                ...state,
+                dat: action.payload
             }
         default:
             return state;
