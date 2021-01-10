@@ -19,7 +19,7 @@ class Renting extends React.Component {
                 <section className="section">
                     <div className="row">
                         <div className="col s12 l6">
-                            {this.props.localRenting.items ? <Items items={this.props.localRenting.items} /> : null}
+                            {this.props.localRenting.items ? <Items items={this.props.localRenting.items} rentingId={this.props.match.params.id} /> : null}
                         </div>
                         <div className="col s12 l6">
                             <DataPacket data={this.props.localRenting} />

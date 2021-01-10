@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { addItem } from '../actions/itemActions';
+import { fetchRentingById } from '../actions/rentingActions';
+import { addItem, deleteItems } from '../actions/itemActions';
 import { connect } from 'react-redux';
 
 class Items extends React.Component {
@@ -63,6 +64,11 @@ class Items extends React.Component {
         this.setState({ showModal: false });
     }
 
+    deleteItemRow = (itemId, itemName) => {
+        this.props.deleteItems(itemId, itemName);
+        this.props.fetchRentingById(this.props.rentingId);
+    }
+
     render() {
 
         const itemRow = this.props.items.map(item => (
@@ -71,8 +77,8 @@ class Items extends React.Component {
                 <td>{item.itemQuantity}</td>
                 <td>{this.generatePrices(item.itemQuantity)}</td>
                 <td>
-                    <span className="wh-dataItems-item-delete">
-                        <i class="fas fa-file-times"></i>
+                    <span className="wh-dataItems-item-delete" onClick={() => this.deleteItemRow(item.id)}>
+                        <i className="fas fa-file-times"></i>
                     </span>
                 </td>
             </tr>
@@ -144,4 +150,4 @@ class Items extends React.Component {
 
 }
 
-export default connect(null, { addItem })(Items);
+export default connect(null, { addItem, deleteItems, fetchRentingById })(Items);

@@ -130,9 +130,9 @@ class Reports extends React.Component {
         ))
 
         const fileWdgt = this.state.reportLinks.map(link => (
-            <div className="wh-filelist-file">
+            <div key={link} className="wh-filelist-file">
                 <span className="wh-filelist-file-name">{link}</span>
-                <span className="wh-filelist-file-del"><i class="fas fa-file-times"></i></span>
+                <span className="wh-filelist-file-del"><i className="fas fa-file-times"></i></span>
             </div>
         ))
 
@@ -166,7 +166,7 @@ class Reports extends React.Component {
                                 <div className="wh-reportField">
                                     <div className="wh-reportField-title">
                                         {this.state.reportTitle}
-                                        <span className="wh-reportField-edit" onClick={this.openEditModal}><i class="fas fa-edit"></i></span>
+                                        <span className="wh-reportField-edit" onClick={this.openEditModal}><i className="fas fa-edit"></i></span>
                                     </div>
                                     <div className="wh-reportField-summary">
                                         {this.state.reportSummary}
