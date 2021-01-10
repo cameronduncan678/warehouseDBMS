@@ -70,6 +70,11 @@ class Items extends React.Component {
                 <td>{item.itemName}</td>
                 <td>{item.itemQuantity}</td>
                 <td>{this.generatePrices(item.itemQuantity)}</td>
+                <td>
+                    <span className="wh-dataItems-item-delete">
+                        <i class="fas fa-file-times"></i>
+                    </span>
+                </td>
             </tr>
         ))
 
@@ -85,6 +90,7 @@ class Items extends React.Component {
                                 <th className="wh-dataitem-header-1">Name Here</th>
                                 <th className="wh-dataitem-header-2">Amount</th>
                                 <th className="wh-dataitem-header-2">Price/WK</th>
+                                <th className="wh-dataitem-header-2"></th>
                             </tr>
                         </thead>
                         <tbody className="wh-dataitem-body">
@@ -95,6 +101,7 @@ class Items extends React.Component {
                                 <td></td>
                                 <td></td>
                                 <td className="wh-dataitem-footer-total">£{this.generateTotal()}</td>
+                                <td></td>
                             </tr>
                         </tfoot>
                     </table>

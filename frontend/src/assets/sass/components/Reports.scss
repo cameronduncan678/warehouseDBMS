@@ -236,3 +236,93 @@
 .wh-newReport-files{
     
 }
+
+.wh-reportField-edit{
+    float: right;
+    margin-right: 30px;
+    color: $mainGreen;
+    background: $mainOrange;
+    padding: 10px;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.wh-newReport-summary-edit{
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: $mainGreen;
+    padding: 20px;
+    color: $mainOrange;
+    border-radius: 5px;
+}
+
+.wh-newReport-summary-edit label{
+    color: $mainOrange;
+}
+
+.wh-editReport-summary{
+    width: 48%;
+    float: left;
+}
+
+.wh-editReport-filelist{
+    width: 48%;
+    margin-left: 2%;
+    float: left;
+}
+
+.wh-editReport-filelist-area{
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    background: $mainGreen;
+    border: solid 2px $mainOrange;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+.wh-filelist-file{
+    width: 90%;
+    height: 50px;
+    background: $mainOrange;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+}
+
+.wh-filelist-file-name{
+    color: $mainGreen;
+    margin-left: 5px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 60%;
+    float: left;
+}
+
+.wh-filelist-file-del{
+    background: $mainGreen;
+    color: $mainOrange;
+    float: right;
+    margin-right: 10px;
+    width: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.wh-editReport-btns-delete{
+    float: right;
+    background: $mainGreen;
+    color: $mainOrange;
+    cursor: pointer;
+    margin-right: 10px;
+}

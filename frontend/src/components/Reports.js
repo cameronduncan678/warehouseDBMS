@@ -2,6 +2,7 @@ import React from 'react';
 import { fetchReports, addNewReport } from '../actions/reportsActions';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
+import JQuery from 'jquery';
 
 class Reports extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Reports extends React.Component {
             reportTitle: '',
             reportSummary: '',
             reportLinks: [],
-            showModal: false,
+            showModalNewReport: false,
+            showModalEditReport: false,
             newReportTitle: '',
             newReportSummary: '',
             newReportFiles: {},
@@ -29,16 +31,25 @@ class Reports extends React.Component {
             reportSummary: this.props.localReports[index].reportText,
             reportLinks: this.props.localReports[index].links
         })
+        JQuery('.wh-reportField-edit').show();
     }
 
     // Open the add item modal
     openModal = () => {
-        this.setState({ showModal: true });
+        this.setState({ showModalNewReport: true });
+    }
+
+    openEditModal = () => {
+        this.setState({ showModalEditReport: true });
     }
 
     // Close the add item modal
     closeModal = () => {
-        this.setState({ showModal: false });
+        this.setState({ showModalNewReport: false });
+    }
+
+    closeEditModal = () => {
+        this.setState({ showModalEditReport: false });
     }
 
     onChange(e) {
@@ -118,6 +129,13 @@ class Reports extends React.Component {
             </a>
         ))
 
+        const fileWdgt = this.state.reportLinks.map(link => (
+            <div className="wh-filelist-file">
+                <span className="wh-filelist-file-name">{link}</span>
+                <span className="wh-filelist-file-del"><i class="fas fa-file-times"></i></span>
+            </div>
+        ))
+
         return (
             <div>
                 <section className="section wh-report-container">
@@ -148,6 +166,7 @@ class Reports extends React.Component {
                                 <div className="wh-reportField">
                                     <div className="wh-reportField-title">
                                         {this.state.reportTitle}
+                                        <span className="wh-reportField-edit" onClick={this.openEditModal}><i class="fas fa-edit"></i></span>
                                     </div>
                                     <div className="wh-reportField-summary">
                                         {this.state.reportSummary}
@@ -160,7 +179,9 @@ class Reports extends React.Component {
                         </div>
                     </div>
                 </section>
-                <Modal className="wh-newReport-modal" isOpen={this.state.showModal} overlayClassName="wh-modal-Overlay">
+
+                {/* New Report Modal */}
+                <Modal className="wh-newReport-modal" isOpen={this.state.showModalNewReport} overlayClassName="wh-modal-Overlay">
                     <div className="wh-newReport-space">
                         <div className="wh-newReport-form">
                             <div className="wh-newReport-input">
@@ -180,6 +201,42 @@ class Reports extends React.Component {
                             <div className="wh-newReport-btns">
                                 <button className="wh-newReport-btns-commit" onClick={() => this.commitReport()}>Commit</button>
                                 <button className="wh-newReport-btns-cancel" onClick={this.closeModal}>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </Modal>
+
+                {/* Edit Report Modal */}
+                <Modal className="wh-newReport-modal" isOpen={this.state.showModalEditReport} overlayClassName="wh-modal-Overlay">
+                    <div className="wh-newReport-space">
+                        <div className="wh-newReport-form">
+                            <div className="wh-newReport-input">
+                                <label for="newReportTitle">Title</label>
+                                <input type="text" name="newReportTitle" onChange={this.onChange} defaultValue={this.state.reportTitle}></input>
+                            </div>
+                            <div className="wh-newReport-summary-edit">
+                                <div className="wh-editReport-summary">
+                                    <label for="newReportSummary">Summary</label>
+                                    <br></br>
+                                    <textarea className="wh-newReport-summary-text" name="newReportSummary" onChange={this.onChange} defaultValue={this.state.reportSummary}></textarea>
+                                </div>
+                                <div className="wh-editReport-filelist">
+                                    <label>File List</label>
+                                    <br></br>
+                                    <div className="wh-editReport-filelist-area">
+                                        {fileWdgt}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="wh-newReport-input">
+                                <label for="newReportFiles">Files</label>
+                                <br></br>
+                                <input className="wh-newReport-files" type="file" name="newReportFiles" multiple onChange={this.onFileChange}></input>
+                            </div>
+                            <div className="wh-newReport-btns">
+                                <button className="wh-newReport-btns-commit">Commit</button>
+                                <button className="wh-newReport-btns-cancel" onClick={this.closeEditModal}>Cancel</button>
+                                <button className="wh-editReport-btns-delete">Delete</button>
                             </div>
                         </div>
                     </div>

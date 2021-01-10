@@ -88,12 +88,12 @@ class LocationCard extends React.Component {
             .attr('fill', d => d.data.color);
 
 
-        if (this.props.location.stats.totalStorage != 0) {
+        if (this.props.location.stats.totalStorage !== 0) {
             const greenScale = storageScale(this.props.location.stats.totalStorage);
 
             greenBarGraph.attr('width', greenScale);
 
-            if (this.props.location.stats.totalWarning != 0) {
+            if (this.props.location.stats.totalWarning !== 0) {
                 const orangeScale = greenScale + storageScale(this.props.location.stats.totalWarning);
                 orangeBarGraph.attr('width', orangeScale);
             }
@@ -115,7 +115,7 @@ class LocationCard extends React.Component {
     }
 
     async commitNewTargets() {
-        if (this.state.percInput != '', this.state.slotsInput != '', this.state.spacesInput != '', this.state.incomeInput != '') {
+        if (this.state.percInput !== '', this.state.slotsInput !== '', this.state.spacesInput !== '', this.state.incomeInput !== '') {
             let targetObj = {
                 locationId: this.props.location.locationId,
                 perc: +this.state.percInput,

@@ -72,6 +72,7 @@
 .wh-data-submit-btn{height:100%;width:40%;border-radius:50px;background:#ff7d1c;color:#047067;font-size:20px;font-weight:bold}
 .wh-data-submit-btn:hover{background:#047067;border:solid 3px #ff7d1c;color:#ff7d1c}
 .wh-dataitem-body-del{background:#047067;color:#ff7d1c}.wh-dataitem-body-del:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
+.wh-dataItems-item-delete{width:100%;background:#047067;height:100%;color:#ff7d1c;padding:10px;border-radius:5px;cursor:pointer}
 @media screen and (max-width:992px){.wh-datapacket{margin-top:30px}}.wh-locations{width:90%;margin:0 auto;margin-top:20px}
 .wh-locations-nav{width:95%;margin-top:30px;height:700px;background:#ff7d1c;margin:0 auto;border-radius:10px;padding-top:20px;overflow-y:scroll;text-transform:capitalize;cursor:pointer}
 .wh-location-nav-link{width:90%;margin:0 auto;height:70px;background:#047067;border-radius:10px;margin-bottom:20px;color:#ff7d1c;font-size:30px;padding-top:10px;padding-left:10px}
@@ -140,6 +141,14 @@
 .wh-newReport-btns{margin-top:10px;height:50px}.wh-newReport-btns button{height:100%;width:130px;border:0;border-radius:5px}
 .wh-newReport-btns-commit{float:left;background:#047067;color:#ff7d1c;cursor:pointer}
 .wh-newReport-btns-cancel{float:right;background:red;color:#047067;cursor:pointer}
+.wh-reportField-edit{float:right;margin-right:30px;color:#047067;background:#ff7d1c;padding:10px;width:80px;text-align:center;border-radius:10px;cursor:pointer;display:none}
+.wh-newReport-summary-edit{height:300px;margin-top:30px;margin-bottom:30px;background:#047067;padding:20px;color:#ff7d1c;border-radius:5px}
+.wh-newReport-summary-edit label{color:#ff7d1c}.wh-editReport-summary{width:48%;float:left}
+.wh-editReport-filelist{width:48%;margin-left:2%;float:left}.wh-editReport-filelist-area{height:200px;width:100%;border-radius:5px;background:#047067;border:solid 2px #ff7d1c;margin-top:10px;overflow-y:scroll}
+.wh-filelist-file{width:90%;height:50px;background:#ff7d1c;border-radius:5px;margin:0 auto;margin-top:5px;margin-bottom:5px;text-overflow:ellipsis}
+.wh-filelist-file-name{color:#047067;margin-left:5px;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:60%;float:left}
+.wh-filelist-file-del{background:#047067;color:#ff7d1c;float:right;margin-right:10px;width:40px;padding:10px;border-radius:5px;margin-top:3px;cursor:pointer}
+.wh-editReport-btns-delete{float:right;background:#047067;color:#ff7d1c;cursor:pointer;margin-right:10px}
 .wh-table-section{height:450px;background:#ff7d1c;border-radius:5px;overflow:scroll}
 .wh-table{color:#047067}.wh-table-header-1{width:250px;background:#ff7d1c}.wh-table-header-2{width:350px;background:#ff7d1c}
 .wh-table-header-3{width:270px;background:#ff7d1c}.wh-table-header-4{width:300px;background:#ff7d1c}
