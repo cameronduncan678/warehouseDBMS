@@ -46,5 +46,19 @@ namespace warehousedbms.Controllers
             
             return Ok();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteItem(long id)
+        {
+            var item = _dataContext.Items.Single(i => i.id == id);
+            if (item != null)
+            {
+                _dataContext.Items.Remove(item);
+                await _dataContext.SaveChangesAsync();
+                return Ok();
+            }
+
+            return NotFound();
+        }
     }
 }
