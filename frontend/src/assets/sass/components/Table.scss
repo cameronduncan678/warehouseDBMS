@@ -127,3 +127,15 @@
 .wh-table tbody td {
   border: solid 1px $accentDarkGreen;
 }
+
+@media screen and (min-width: 1051px){
+  .wh-table-section table{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1050px){
+  .wh-table-section table{
+    width: 1200px;
+  }
+}

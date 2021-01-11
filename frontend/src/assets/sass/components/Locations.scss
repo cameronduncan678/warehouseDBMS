@@ -27,12 +27,13 @@
     border-radius: 10px;
     margin-bottom: 20px;
     color: $mainOrange;
-    font-size: 30px;
+    font-size: 25px;
     padding-top: 10px;
     padding-left: 10px;
 }
 
 .wh-location-nav-link span{
+    width: 100%;
     padding-left: 10px;
     font-weight: bold;
 }
@@ -142,7 +143,7 @@
 
 .wh-locations-targets-targets{
     height: 30px;
-    font-size: 30px;
+    font-size: 25px;
     color: $mainGreen;
     font-weight: bold;
     margin-left: 10px;
@@ -173,7 +174,7 @@
 .wh-locations-targets-new{
     height: 40px;
     background: $mainGreen;
-    width: 30%;
+    width: 50%;
     font-size: 20px;
     text-align: center;
     margin-top: 10px;
@@ -352,5 +353,36 @@
 
     #locationNav{
         display: none;
+    }
+}
+
+@media screen and (max-width: 970px){
+    .wh-locations-wdgts-title-income span{ 
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1149px){
+    .wh-locations-wdgts-title-income{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1003px){
+    #locationNav{
+        display: none;
+    }
+
+    #locationDash{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1300px){
+    .wh-location-nav-link span{
+        width: 50%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

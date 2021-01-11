@@ -55,7 +55,7 @@
 }
 
 .wh-addItem-btn{
-  width: 10%;
+  width: 20%;
   height: 100%;
   float: left;
   background: $mainOrange;
@@ -156,4 +156,58 @@
   background: $mainGreen;
   color: red;
   border: solid 3px red;
+}
+
+@media screen and (max-width: 790px){
+  .wh-newData{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .wh-addItem-btn{
+    width: 50%;
+  }
+
+  .wh-data-submit-btn{
+    width: 100%;
+  }
+
+  .wh-newData-cancel{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .wh-addData-input{
+    height: 140px;
+  }
+
+  .wh-addData-input-title{
+    float: none;
+    height: 50%;
+  }
+
+  .wh-addData-input-feild{
+    float: none;
+    height: 50%;
+  }
+
+  .wh-addData-commit-btn{
+    height: 50%;
+  }
+
+  .wh-addData-cancel-btn{
+    height: 50%;
+  }
+
+  .wh-addData-input-feild{
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .wh-addData-input-title{
+    width: 100%;
+  }
 }

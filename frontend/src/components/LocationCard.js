@@ -152,7 +152,7 @@ class LocationCard extends React.Component {
                         <div className="">{this.props.location.location}</div>
                     </div>
                     <div className="col s6 wh-locations-wdgts-title-income">
-                        <div className="">Total per/Month: £{this.props.location.incomePerWeek}</div>
+                        <div className=""><span>Total per/Month: </span>£{this.props.location.incomePerWeek}</div>
                     </div>
                 </div>
 
@@ -184,7 +184,7 @@ class LocationCard extends React.Component {
                                 {this.props.location.targets.perc}%, {this.props.location.targets.slots}sl, {this.props.location.targets.spaces}sp, £{this.props.location.targets.income}
                             </div>
                             <div className="wh-locations-targets-projections">
-                                Next Month Projections: <span className={projectionCheck(this.props.location)}>£{this.props.location.projection}</span>
+                                Projections: <span className={projectionCheck(this.props.location)}>£{this.props.location.projection}</span>
                             </div>
                             <div className="wh-locations-targets-new" onClick={() => this.openModal()}>
                                 New Targets

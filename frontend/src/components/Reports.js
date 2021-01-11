@@ -140,7 +140,7 @@ class Reports extends React.Component {
             <div>
                 <section className="section wh-report-container">
                     <div className="row">
-                        <div className="col s12 m4">
+                        <div className="col s12 l4">
                             <div className="wh-report-timeline">
                                 <div className="wh-timeline">
                                     <div className="wh-timeline-title">
@@ -161,7 +161,7 @@ class Reports extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col s12 m8">
+                        <div className="col s12 l8">
                             <div className="wh-report-report">
                                 <div className="wh-reportField">
                                     <div className="wh-reportField-title">
@@ -207,8 +207,8 @@ class Reports extends React.Component {
                 </Modal>
 
                 {/* Edit Report Modal */}
-                <Modal className="wh-newReport-modal" isOpen={this.state.showModalEditReport} overlayClassName="wh-modal-Overlay">
-                    <div className="wh-newReport-space">
+                <Modal className="wh-editReport-modal" isOpen={this.state.showModalEditReport} overlayClassName="wh-modal-Overlay">
+                    <div className="wh-newReport-space-edit">
                         <div className="wh-newReport-form">
                             <div className="wh-newReport-input">
                                 <label for="newReportTitle">Title</label>

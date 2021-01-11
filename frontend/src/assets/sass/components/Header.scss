@@ -107,6 +107,12 @@
   }
 }
 
+@media screen and (max-width: 1000px){
+  .wh-header-user{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 981px) {
   .wh-header-item {
     width: 15%;
@@ -165,5 +171,6 @@
   .wh-header-user {
     background: $mainOrange;
     color: $mainGreen;
+    display: block;
   }
 }

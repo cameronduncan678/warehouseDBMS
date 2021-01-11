@@ -75,8 +75,8 @@
 .wh-timeline-wgt-open{
     font-size: 20px;
     font-weight: bold;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 35px;
     color: $mainGreen;
     margin-left: 10px;
     background: $mainGreen;
@@ -158,10 +158,11 @@
 .wh-newReport-space{
     padding: 30px;
 }
+.wh-newReport-space-edit{
+    padding: 30px;
+}
 
 .wh-newReport-form{
-    height: 100%;
-    width: 100%;
 }
 
 .wh-newReport-form label{
@@ -325,4 +326,37 @@
     color: $mainOrange;
     cursor: pointer;
     margin-right: 10px;
+}
+
+@media screen and (max-width: 750px){
+
+    .wh-newReport-summary-edit{
+        height: 550px;
+    }
+
+    .wh-editReport-summary{
+        float: none;
+        width: 100%;
+    }
+
+    .wh-editReport-filelist{
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .wh-report-timeline{
+        height: 400px;
+    }
+
+    .wh-timeline-reports{
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 1600px){
+    .wh-timeline-wgt-date{
+        display: none;
+    }
 }

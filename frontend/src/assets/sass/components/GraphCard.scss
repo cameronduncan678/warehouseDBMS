@@ -67,3 +67,11 @@
   background: $mainOrange;
   color: $mainGreen;
 }
+
+@media screen and (max-width: 1306px){
+  .wh-graphcard-graphcard-loc{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

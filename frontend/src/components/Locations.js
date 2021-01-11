@@ -85,7 +85,7 @@ class Locations extends React.Component {
                                 {locationNavs}
                             </div>
                         </div>
-                        <div className="col s12 m9">
+                        <div id='locationDash' className="col s12 m9">
                             <div className="wh-locations-wdgts">
                                 {locationDash}
                             </div>
