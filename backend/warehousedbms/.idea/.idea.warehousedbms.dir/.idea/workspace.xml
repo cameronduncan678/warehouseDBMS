@@ -23,13 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ffe3c86-fab9-4ce1-bd98-b43f8c6cbf43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.warehousedbms.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ItemsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ItemsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/RentingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RentingController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/warehousedbms.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/Items.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/Items.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +69,9 @@
         <option value="$PROJECT_DIR$/Utils/LocationUtils.cs" />
         <option value="$PROJECT_DIR$/Models/LocationWithTargets.cs" />
         <option value="$PROJECT_DIR$/Controllers/LocationController.cs" />
-        <option value="$PROJECT_DIR$/Controllers/RentingController.cs" />
         <option value="$PROJECT_DIR$/Controllers/ItemsController.cs" />
+        <option value="$PROJECT_DIR$/Models/EditRenting.cs" />
+        <option value="$PROJECT_DIR$/Controllers/RentingController.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +147,7 @@
       <workItem from="1608816145366" duration="2912000" />
       <workItem from="1609149169204" duration="2171000" />
       <workItem from="1610093109909" duration="4555000" />
-      <workItem from="1610288010114" duration="4336000" />
+      <workItem from="1610288010114" duration="7923000" />
     </task>
     <servers />
   </component>

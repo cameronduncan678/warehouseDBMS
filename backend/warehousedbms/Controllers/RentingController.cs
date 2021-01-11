@@ -129,5 +129,28 @@ namespace warehousedbms.Controllers
             
             return Ok();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateRenting(string id, [FromBody]EditRenting rentingData)
+        {
+            var _renting = _dataContext.Renting.Single(r => r.orderId == id);
+            
+            if (_renting != null)
+            {
+                foreach (var rent in _dataContext.Renting)
+                {
+                    if (rent.orderId == id)
+                    {
+                        rent.client = rentingData.client;
+                        rent.LeaseEnd = rentingData.LeaseEnd;
+                        rent.location = rentingData.location;
+                        rent.status = rentingData.status;
+                    }
+                }
+                await _dataContext.SaveChangesAsync();
+                return Ok();
+            }
+            return NotFound();
+        }
     }
 }
