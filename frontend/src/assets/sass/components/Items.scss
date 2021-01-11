@@ -263,6 +263,23 @@
   color: $mainOrange;
 }
 
+.wh-data-delete-btn{
+  margin-left: 15px;
+  height: 100%;
+  width: 40%;
+  border-radius: 50px;
+  background: red;
+  color: $mainGreen;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wh-data-delete-btn:hover{
+  background: $mainGreen;
+  border: solid 3px red;
+  color: red;
+}
+
 .wh-dataitem-body-del{
   background: $mainGreen;
   color: $mainOrange;

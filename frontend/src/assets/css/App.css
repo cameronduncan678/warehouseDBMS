@@ -71,7 +71,9 @@
 .wh-data-input{width:60%;margin-left:5%;background:#d1dfda;height:100%;float:left;border-radius:10px}
 .wh-data-submit-btn{height:100%;width:40%;border-radius:50px;background:#ff7d1c;color:#047067;font-size:20px;font-weight:bold}
 .wh-data-submit-btn:hover{background:#047067;border:solid 3px #ff7d1c;color:#ff7d1c}
-.wh-dataitem-body-del{background:#047067;color:#ff7d1c}.wh-dataitem-body-del:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
+.wh-data-delete-btn{margin-left:15px;height:100%;width:40%;border-radius:50px;background:red;color:#047067;font-size:20px;font-weight:bold}
+.wh-data-delete-btn:hover{background:#047067;border:solid 3px red;color:red}.wh-dataitem-body-del{background:#047067;color:#ff7d1c}
+.wh-dataitem-body-del:hover{background:#ff7d1c;color:#047067;border:solid 3px #047067}
 .wh-dataItems-item-delete{width:100%;background:#047067;height:100%;color:#ff7d1c;padding:10px;border-radius:5px;cursor:pointer}
 @media screen and (max-width:992px){.wh-datapacket{margin-top:30px}}.wh-locations{width:90%;margin:0 auto;margin-top:20px}
 .wh-locations-nav{width:95%;margin-top:30px;height:700px;background:#ff7d1c;margin:0 auto;border-radius:10px;padding-top:20px;overflow-y:scroll;text-transform:capitalize;cursor:pointer}

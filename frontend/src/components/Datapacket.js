@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchLocations } from '../actions/locationsActions';
+import { editRenting } from '../actions/rentingActions';
 import { connect } from 'react-redux';
 
 class DataPacket extends React.Component {
@@ -20,6 +21,21 @@ class DataPacket extends React.Component {
 
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
+    }
+
+    commitRentingData() {
+        var rentingObj = {
+            client: this.state.client !== undefined ? this.state.client : this.props.data.client,
+            LeaseEnd: this.state.leaseEnd !== undefined ? this.state.leaseEnd : this.props.data.leaseEnd,
+            location: this.state.location !== undefined ? this.state.location : this.props.data.location,
+            status: this.state.status !== undefined ? this.state.status : this.props.data.status
+        }
+
+        this.props.editRenting(rentingObj, this.props.data.orderId);
+    }
+
+    deleteData(dataId) {
+        alert(`Renting: ${dataId} was not deleted. Functionality Under Review`);
     }
 
     render() {
@@ -86,8 +102,11 @@ class DataPacket extends React.Component {
                 </div>
                 <div className="section">
                     <div className="wh-data-submit">
-                        <button className="wh-data-submit-btn btn">
+                        <button className="wh-data-submit-btn btn" onClick={() => this.commitRentingData()}>
                             Edit Data
+                        </button>
+                        <button className="wh-data-delete-btn btn" onClick={() => this.deleteData(this.props.data.orderId)}>
+                            Delete
                         </button>
                     </div>
                 </div>
@@ -100,4 +119,4 @@ const mapStateToProps = state => ({
     localLocations: state.locations.data
 });
 
-export default connect(mapStateToProps, { fetchLocations })(DataPacket);
+export default connect(mapStateToProps, { fetchLocations, editRenting })(DataPacket);

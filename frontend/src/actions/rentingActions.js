@@ -116,3 +116,7 @@ export const itemRenting = (itemId) => dispatch => {
             })
         })
 }
+
+export const editRenting = (rentingObj, rentingId) => dispatch => {
+    axios.put(localhost + `/${rentingId}`, rentingObj, { headers: { "Access-Control-Allow-Origin": "*" } });
+}
